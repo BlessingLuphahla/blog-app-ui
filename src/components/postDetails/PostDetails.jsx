@@ -5,7 +5,10 @@ import http from '../../utils/axios';
 import './postDetails.css'
 
 export default function PostDetails() {
-    const publicFolder = 'http://localhost:5000/images/';
+    const publicFolder =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:5000/images/"
+      : "https://blog-app-api-7q63.onrender.com/images/";;
     const [post, setPost] = useState({});
     const { postId } = useParams();
     const { user } = useContext(Context);

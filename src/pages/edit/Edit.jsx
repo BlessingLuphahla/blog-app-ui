@@ -6,7 +6,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Context } from '../../context/Context';
 
 export default function Edit() {
-    const publicFolder = 'http://localhost:5000/images/';
+    const publicFolder =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:5000/images/"
+      : "https://blog-app-api-7q63.onrender.com/images/";;
     const navigate = useNavigate();
     const { postId } = useParams();
     const [post, setPost] = useState('');

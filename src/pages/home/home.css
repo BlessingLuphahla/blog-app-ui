@@ -1,3 +1,10 @@
 .home {
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .home {
     display: flex;
+    flex-direction: column;
+  }
 }
