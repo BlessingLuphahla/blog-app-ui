@@ -37,11 +37,6 @@ export default function Sidebar() {
                             </Link>
                         </li>
                     ))}
-                    {/* <li className="sidebarListItem">Music</li>
-                    <li className="sidebarListItem">Style</li>
-                    <li className="sidebarListItem">Sport</li>
-                    <li className="sidebarListItem">Tech</li>
-                    <li className="sidebarListItem">Cinema</li> */}
                 </ul>
             </div>
 

@@ -18,16 +18,6 @@ export default function Posts(props) {
           Posts not found...
         </div>
       )}
-
-      {/* {props.posts.map((post, index) => (
-        <Post key={index} post={post} />
-      ))} */}
-
-      {/* {posts} */}
-
-      {/* {props.posts.map((p) => {
-        <Post />
-      })} */}
     </div>
   )
 }
