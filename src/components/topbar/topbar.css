@@ -57,11 +57,24 @@
   margin-left: 15px;
 }
 
+.topbarUsername {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+
 @media (max-width: 700px) {
   .top {
     width: 100%;
     justify-content: start;
+    padding: 5px;
   }
+
+  .topbarUsername {
+    font-size: 12px;
+    text-transform: capitalize;
+  }
+  
 
   .topRight {
     flex: 3;
