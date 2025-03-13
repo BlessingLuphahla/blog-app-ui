@@ -70,12 +70,6 @@
     padding: 5px;
   }
 
-  .topbarUsername {
-    font-size: 12px;
-    text-transform: capitalize;
-  }
-  
-
   .topRight {
     flex: 3;
     display: flex;
