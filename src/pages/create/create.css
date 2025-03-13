@@ -66,8 +66,8 @@
   font-size: 16px;
 }
 
-
 @media (max-width: 700px) {
+ 
   .create {
     padding: 10px;
     padding-top: 20px;
@@ -77,8 +77,6 @@
 
   .createFormGroup {
     margin-left: 0px;
-    display: flex;
-    align-items: center;
   }
 
   .createIcon {
@@ -88,13 +86,18 @@
   }
 
   .createInput {
-    font-size: 20px;
-    padding: 20px;
-    width: 70vw;
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
   }
 
   .createText {
     font-size: 20px;
+  }
+
+  textarea.createInput.createText {
+    font-size: 15px;
+    min-height: 400px;
   }
 
   .createSubmit {

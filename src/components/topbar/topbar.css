@@ -62,8 +62,60 @@
   text-transform: capitalize;
 }
 
+.mobileMenu {
+  display: none;
+}
+
+.hamburger {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
+  padding: 5px;
+}
+
+.hamburger div {
+  width: 36px;
+  height: 6px;
+  background-color: teal;
+}
 
 @media (max-width: 700px) {
+  .mobileMenu {
+    display: flex;
+    width: max-content;
+  }
+
+  .mobileMenuBar {
+    background-color: teAL;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    height: 99vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+  }
+
+  .menuClose {
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    color: white;
+  }
+
+  .mobileMenuItem {
+    font-size: 24px;
+    font-weight: 100;
+  }
+
   .top {
     width: 100%;
     justify-content: start;
@@ -82,12 +134,7 @@
   }
 
   .topList {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    width: 100%;
+    display: none;
   }
 
   .topIcon {
@@ -103,8 +150,6 @@
     border-radius: 50%;
     object-fit: cover;
   }
-
- 
 
   .topListItem {
     margin-right: 10px;

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./topbar.css";
@@ -6,6 +6,7 @@ import "./topbar.css";
 export default function TopBar() {
   const publicFolder = "http://localhost:5000/images/profiles/";
   const { user, dispatch } = useContext(Context);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -14,6 +15,48 @@ export default function TopBar() {
   return (
     <div className="top">
       <div className="topCenter">
+        <div className="mobileMenu">
+          <div className="hamburger" onClick={() => setIsMenuOpen(true)}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          {isMenuOpen && (
+            <div className="mobileMenuBar">
+              <div className="menuClose" onClick={() => setIsMenuOpen(false)}>
+                ×
+              </div>
+              <div className="mobileMenuItem">
+                <Link onClick={() => setIsMenuOpen(false)} to={"/"}>
+                  HOME
+                </Link>
+              </div>
+              <div className="mobileMenuItem">
+                <Link onClick={() => setIsMenuOpen(false)} to={"/about"}>
+                  ABOUT
+                </Link>
+              </div>
+              <div className="mobileMenuItem">
+                <Link onClick={() => setIsMenuOpen(false)} to={"/contact"}>
+                  CONTACT
+                </Link>
+              </div>
+              {user && (
+                <div className="mobileMenuItem">
+                  <Link onClick={() => setIsMenuOpen(false)} to={"/create"}>
+                    WRITE
+                  </Link>
+                </div>
+              )}
+              {user && (
+                <div className="mobileMenuItem" onClick={handleLogout}>
+                  LOGOUT
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
         <ul className="topList">
           <li className="topListItem">
             <Link to={"/"}>HOME</Link>
@@ -34,33 +77,6 @@ export default function TopBar() {
               LOGOUT
             </li>
           )}
-
-          {/* <li className='topListItem'>
-                    {user && 'LOGOUT'}
-                    <Link to={'/logout'}>LOGOUT</Link>
-                </li> */}
-
-          {/* <li className='topListItem'>HOME</li>
-                <li className='topListItem'>ABOUT</li>
-                <li className='topListItem'>CONTACT</li>
-                <li className='topListItem'>WRITE</li>
-                <li className='topListItem'>LOGOUT</li> */}
-
-          {/* <Link to={'/'}>
-                    <li className='topListItem'>HOME</li>
-                </Link>
-                <Link to={'/about'}>
-                    <li className='topListItem'>ABOUT</li>
-                </Link>
-                <Link to={'/contact'}>
-                    <li className='topListItem'>CONTACT</li>
-                </Link>
-                <Link to={'/write'}>
-                    <li className='topListItem'>WRITE</li>
-                </Link>
-                <Link to={'/logout'}>
-                    <li className='topListItem'>LOGOUT</li>
-                </Link> */}
         </ul>
       </div>
       <div className="topRight">
@@ -87,7 +103,7 @@ export default function TopBar() {
                 alt="avatar"
               />
             )}
-            <div className="topbarUsername">{user?.name || "Username"}</div>
+            <div className="topbarUsername">{user?.username || "Username"}</div>
           </Link>
         ) : (
           <ul className="topList">
