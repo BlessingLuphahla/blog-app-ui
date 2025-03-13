@@ -28,10 +28,6 @@
   text-align: center;
 }
 
-.sidebarItem > img {
-  margin-top: 15px;
-}
-
 .sidebarItem > p {
   padding: 30px;
 }
@@ -60,6 +56,12 @@
   font-size: 16px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.sidebarItem > img {
+  margin-top: 15px;
+  width: 100%;
+  height: 220px;
 }
 
 @media (max-width: 700px) {
