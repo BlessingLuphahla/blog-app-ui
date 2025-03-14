@@ -18,7 +18,6 @@ function App() {
       <TopBar />
 
       <Routes>
-        {/* user ? <Home /> : <Login /> */}
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<Details />} />
         <Route path="/create" element={user ? <Create /> : <Home />} />

@@ -41,7 +41,7 @@ export default function TopBar() {
                   CONTACT
                 </Link>
               </div>
-              <div className="mobileMenuItem">
+              {/* <div className="mobileMenuItem">
                 <Link onClick={() => setIsMenuOpen(false)} to={"/login"}>
                   Login
                 </Link>
@@ -50,7 +50,7 @@ export default function TopBar() {
                 <Link onClick={() => setIsMenuOpen(false)} to={"/register"}>
                   Register
                 </Link>
-              </div>
+              </div> */}
               {user && (
                 <div className="mobileMenuItem">
                   <Link onClick={() => setIsMenuOpen(false)} to={"/create"}>
@@ -116,14 +116,15 @@ export default function TopBar() {
             <div className="topbarUsername">{user?.username || "Username"}</div>
           </Link>
         ) : (
-          <ul className="topList">
-            <li className="topListItem">
-              <Link to={"/login"}>Login</Link>
-            </li>
-            <li className="topListItem">
-              <Link to={"/register"}>Register</Link>
-            </li>
-          </ul>
+          // <ul className="topList">
+          //   <li className="topListItem">
+          //     <Link to={"/login"}>Login</Link>
+          //   </li>
+          //   <li className="topListItem">
+          //     <Link to={"/register"}>Register</Link>
+          //   </li>
+          // </ul>
+          <></>
         )}
         <i className="topSearchIcon fa-solid fa-magnifying-glass"></i>
       </div>
