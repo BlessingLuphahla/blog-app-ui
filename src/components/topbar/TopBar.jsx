@@ -41,6 +41,16 @@ export default function TopBar() {
                   CONTACT
                 </Link>
               </div>
+              <div className="mobileMenuItem">
+                <Link onClick={() => setIsMenuOpen(false)} to={"/login"}>
+                  Login
+                </Link>
+              </div>
+              <div className="mobileMenuItem">
+                <Link onClick={() => setIsMenuOpen(false)} to={"/register"}>
+                  Register
+                </Link>
+              </div>
               {user && (
                 <div className="mobileMenuItem">
                   <Link onClick={() => setIsMenuOpen(false)} to={"/create"}>
