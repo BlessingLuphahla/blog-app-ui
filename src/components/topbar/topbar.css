@@ -11,14 +11,17 @@
 }
 
 .topRight {
-  flex: 3;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .topCenter {
-  flex: 6;
+  flex: 2200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .topIcon {
@@ -41,6 +44,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  gap: 30px;
 }
 
 .topListItem {
@@ -105,15 +109,16 @@
   .menuClose {
     font-size: 20px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 30px;
+    right: 40px;
     font-size: 50px;
     color: white;
   }
 
   .mobileMenuItem {
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 100;
+    margin-bottom: 30px;
   }
 
   .top {
@@ -131,6 +136,7 @@
 
   .topCenter {
     flex: 6;
+    justify-content: start;
   }
 
   .topList {
