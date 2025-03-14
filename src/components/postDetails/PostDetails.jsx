@@ -9,9 +9,10 @@ export default function PostDetails() {
     process.env.NODE_ENV === "development"
       ? "http://localhost:5000/images/"
       : "https://blog-app-api-7q63.onrender.com/images/";
+
   const [post, setPost] = useState({});
   const { postId } = useParams();
-  const { user } = useContext(Context);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,19 +23,6 @@ export default function PostDetails() {
     };
     fetchPost();
   }, []);
-
-  const onDeletePost = async () => {
-    const isConfirmed = window.confirm(
-      "Are you sure you want to delete this post?"
-    );
-
-    if (isConfirmed) {
-      await http.delete(`/post/${postId}`, {
-        data: { author: user.username },
-      });
-      navigate("/");
-    }
-  };
 
   return (
     <div className="postDetails">
@@ -54,17 +42,14 @@ export default function PostDetails() {
         )}
         <h1 className="postDetailsTitle">
           {post?.title}
-          {post?.author === user.username && (
+          {
             <span className="postDetailsEdit">
               <Link to={`/edit/${post?._id}`}>
                 <i className="postDetailsIcon edit fa-solid fa-pen-to-square"></i>
               </Link>
-              <i
-                className="postDetailsIcon delete fa-solid fa-trash-can"
-                onClick={onDeletePost}
-              ></i>
+              <i className="postDetailsIcon delete fa-solid fa-trash-can"></i>
             </span>
-          )}
+          }
         </h1>
         <div className="postDetailsInfo">
           <span className="postDetailsAuthor">

@@ -11,63 +11,27 @@ import { Context } from "./context/Context";
 import Edit from "./pages/edit/Edit";
 
 function App() {
-    const {user} = useContext(Context);
+  const { user } = useContext(Context);
 
-    return (
-        <>
-            <TopBar />
+  return (
+    <>
+      <TopBar />
 
-            <Routes>
-                {/* user ? <Home /> : <Login /> */}
-                <Route path="/" element={<Home />} />
-                <Route path="/post/:postId" element={user ? <Details /> : <Login />} />
-                <Route path="/create" element={user ? <Create /> : <Login />} />
-                <Route path="/edit/:postId" element={user ? <Edit /> : <Login />} />
-                <Route path="/settings" element={user ? <Settings /> : <Login />} />
+      <Routes>
+        {/* user ? <Home /> : <Login /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/post/:postId" element={<Details />} />
+        <Route path="/create" element={user ? <Create /> : <Home />} />
+        <Route path="/edit/:postId" element={user ? <Edit /> : <Home />} />
+        <Route path="/settings" element={user ? <Settings /> : <Home />} />
 
-                <Route path="/login" element={user ? <Home /> : <Login />} />
-                <Route path="/register" element={user ? <Home /> : <Register />} />
+        <Route path="/login" element={user ? <Home /> : <Login />} />
+        <Route path="/register" element={user ? <Home /> : <Register />} />
 
-                <Route path="*" element={<Home />} />
-            </Routes>
-        </>
-
-        // <BrowserRouter>
-        //   <TopBar />
-        //   <Routes>
-        //     <Route path="/" element={<Home />} />
-        //     <Route path="/about" element={<Home />} />
-        //     <Route path="/contact" element={<Home />} />
-        //     <Route path="/write" element={<Home />} />
-        //     <Route path="/logout" element={<Home />} />
-        //     <Route path="/login" element={<Login />} />
-        //     <Route path="/register" element={<Register />} />
-
-        //   </Routes>
-        // </BrowserRouter>
-
-        // <Router>
-        //   <TopBar />
-
-        //   <Switch>
-        //     <Route path="/">
-        //       <Home />
-        //     </Route>
-        //     <Route path="/login">
-        //       <Login />
-        //     </Route>
-        //   </Switch>
-        // </Router>
-        // <>
-        //   <TopBar />
-        //   {/* <Home /> */}
-        //   {/* <Details /> */}
-        //   {/* <Create /> */}
-        //   {/* <Settings /> */}
-        //   <Login />
-        //   {/* <Register /> */}
-        // </>
-    );
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

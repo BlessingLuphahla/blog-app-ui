@@ -9,7 +9,6 @@ import { useSearchParams } from 'react-router-dom'
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [searchParams] = useSearchParams();
-  // console.log('searchParams: ', searchParams.get('author'));
 
   useEffect(() => {
     const fetchPosts = async () => {
