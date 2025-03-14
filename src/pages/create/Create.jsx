@@ -43,6 +43,8 @@ export default function Create() {
 
       try {
         const res = await http.post("/upload", data);
+        console.log(res);
+
         body.image = res.url;
       } catch (error) {
         console.error(error);
