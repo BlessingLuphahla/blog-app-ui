@@ -11,6 +11,7 @@ import { Context } from "./context/Context";
 import Edit from "./pages/edit/Edit";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
+import Footer from "./pages/footer/Footer";
 
 function App() {
   const { user } = useContext(Context);
@@ -34,6 +35,7 @@ function App() {
 
         <Route path="*" element={<Home />} />
       </Routes>
+      <Footer />
     </>
   );
 }

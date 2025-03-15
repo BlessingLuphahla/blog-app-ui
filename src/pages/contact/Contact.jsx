@@ -26,7 +26,6 @@ function Contact() {
           <input id="subject" type="text" placeholder="" />
           <textarea
             id="message"
-            type="text"
             placeholder="Enter Your Message Here (Optional)"
           ></textarea>
           <input id="message" type="submit" value="Send" />
