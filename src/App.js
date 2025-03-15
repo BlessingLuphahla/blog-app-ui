@@ -9,6 +9,8 @@ import { Route, Routes } from "react-router-dom";
 import { useContext } from "react";
 import { Context } from "./context/Context";
 import Edit from "./pages/edit/Edit";
+import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const { user } = useContext(Context);
@@ -23,6 +25,9 @@ function App() {
         <Route path="/create" element={user ? <Create /> : <Home />} />
         <Route path="/edit/:postId" element={user ? <Edit /> : <Home />} />
         <Route path="/settings" element={user ? <Settings /> : <Home />} />
+
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
 
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />

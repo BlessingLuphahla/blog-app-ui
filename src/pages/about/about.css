@@ -1,0 +1,29 @@
+.about {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.aboutItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  color: white;
+  line-height: 20px;
+}
+
+.aboutTitle {
+  margin: 13px;
+  margin-bottom: 25px;
+  padding: 5px;
+  width: 80%;
+  border-top: 1px solid #a7a4a4;
+  border-bottom: 1px solid #a7a4a4;
+  font-family: "Varela Round", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+}
