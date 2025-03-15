@@ -37,13 +37,12 @@
 }
 
 .createInput {
-  --box-shadow: 2px;
-  font-size: 20px;
+  --box-shadow: 1px;
+  font-size: 18px;
   font-weight: 500;
   border: 1px solid teal;
-  box-shadow: var(--box-shadow) var(--box-shadow) var(--box-shadow)
-    var(--box-shadow) teal;
-  padding: 20px;
+  box-shadow: var(--box-shadow) var(--box-shadow) var(--box-shadow) 0px teal;
+  padding: 10px;
   width: 70vw;
   outline: none;
   margin: 5px;
@@ -51,7 +50,8 @@
 }
 
 .createText {
-  font-size: 20px;
+  font-size: 14px;
+  min-height: 400px;
 }
 
 .createSubmit {
@@ -68,7 +68,6 @@
 }
 
 @media (max-width: 700px) {
-
   .createImage {
     margin-left: 5px;
     width: 99%;
@@ -76,12 +75,13 @@
     border-radius: 10px;
     object-fit: cover;
   }
- 
+
   .create {
     padding: 10px;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
+    height: max-content;
   }
 
   .createFormGroup {
@@ -95,13 +95,14 @@
   }
 
   .createInput {
-    font-size: 16px;
-    padding: 15px;
+    font-size: 14px;
+    padding: 8px;
     width: 100%;
   }
 
   .createText {
-    font-size: 20px;
+    font-size: 16px;
+    min-height: 200px;
   }
 
   textarea.createInput.createText {
