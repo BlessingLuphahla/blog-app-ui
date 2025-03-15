@@ -1,6 +1,7 @@
 .home {
   display: flex;
-  background-color: green;
+  background-color: var(--bg);
+  color: var(--color);
 }
 
 @media (max-width: 700px) {
