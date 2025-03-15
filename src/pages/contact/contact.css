@@ -6,8 +6,10 @@
   display: flex;
   padding: 10px;
   margin: 10px;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex-direction: column;
 }
 
 .contactText {
@@ -23,7 +25,16 @@
 
 .contactImage {
   height: 500px;
-  width: 800px;
+  width: 70%;
+}
+
+.contactTitle {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.contactEmail {
+  font-weight: 100;
 }
 
 .contactSecondSection {

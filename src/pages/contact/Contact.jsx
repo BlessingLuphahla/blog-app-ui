@@ -23,7 +23,7 @@ function Contact() {
         <form className="contactForm" onSubmit={(e) => handleSubmit(e)}>
           <input id="name" type="text" placeholder="Your Name" />
           <input id="email" type="text" placeholder="Your Email" />
-          <input id="subject" type="text" placeholder="" />
+          <input id="subject" type="text" placeholder="Subject" />
           <textarea
             id="message"
             placeholder="Enter Your Message Here (Optional)"
