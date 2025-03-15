@@ -37,6 +37,8 @@
   .header {
     justify-content: center;
     align-items: center;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .headerTitleSmall {
@@ -49,7 +51,8 @@
 
   .headerImage {
     width: 98%;
-    margin-top: 80px;
+    margin-top: 20px;
+    height: 320px;
     object-fit: cover;
   }
 }
