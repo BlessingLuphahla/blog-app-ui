@@ -73,8 +73,8 @@ export default function Settings() {
       body.profileImage = filename;
 
       try {
-        const res = await http.post("/api/upload", data);
-        body.profileImage = res.data;
+        const res = await http.post("/upload", data);
+        body.profileImage = res.data.url;
       } catch (error) {
         console.error(error);
       }

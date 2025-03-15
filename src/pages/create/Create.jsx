@@ -39,20 +39,18 @@ export default function Create() {
       data.append("name", filename);
       data.append("file", file);
 
-      body.image = filename;
-
       try {
         const res = await http.post("/upload", data);
-        console.log(res);
+        body.image = res.data.url;
 
-        body.image = res.url;
+        try {
+          const response = await http.post("/post", body);
+          navigate(`/post/${response.data._id}`);
+        } catch (error) {}
       } catch (error) {
         console.error(error);
       }
     }
-
-    const response = await http.post("/post", body);
-    navigate(`/post/${response.data._id}`);
   };
 
   return (
