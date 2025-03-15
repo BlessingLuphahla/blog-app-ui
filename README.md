@@ -8,6 +8,14 @@ A React-based user interface for a blogging application.
 - **Component-Based Architecture**: Utilizes React's component model for modular and maintainable code.
 - **State Management**: Implements efficient state handling for dynamic content updates.
 
+
+#### Technologies Used:
+
+- **Frontend**: React, Axios
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+
+
 ## Getting Started
 
 To run this project locally, follow these steps:
