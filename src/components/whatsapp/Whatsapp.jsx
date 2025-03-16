@@ -7,8 +7,15 @@ import { Link } from "react-router-dom";
 const WhatsApp = () => {
   const [isTextBoxOpen, setIsTextBoxOpen] = useState(false);
 
-  const phoneNumber = "+1234567890";
+  const phoneNumber = "+263788793302";
   const message = "Hello, I need help with your services!";
+
+  const handleWhatsappMessage = () => {
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
 
   return (
     <div className="whatsapp">
@@ -53,16 +60,13 @@ const WhatsApp = () => {
                 <p>Chat With Us, Lets Work Together</p>
               </div>
 
-              <Link
-                to={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                  message
-                )}`}
+              <div
+                onClick={handleWhatsappMessage}
+                className="whatsappTextBoxLowerButton"
               >
-                <div className="whatsappTextBoxLowerButton">
-                  <img src={WhatsappIcon} alt="" className="whatsappButton" />
-                  <span>Chat On Whatsapp</span>
-                </div>
-              </Link>
+                <img src={WhatsappIcon} alt="" className="whatsappButton" />
+                <span>Chat On Whatsapp</span>
+              </div>
             </div>
           </div>
         )}
