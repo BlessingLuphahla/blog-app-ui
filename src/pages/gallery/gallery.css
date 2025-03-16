@@ -1,4 +1,13 @@
 .gallery {
-  height: 90vh;
+  height: 85vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryWrapper {
+  font-weight: 400;
+  color: lightgray;
+  font-size: 20px;
 }

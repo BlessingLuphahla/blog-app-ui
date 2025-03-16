@@ -6,8 +6,8 @@ import WhatsappIcon from "../../images/whatsapp.svg";
 const WhatsApp = () => {
   const [isTextBoxOpen, setIsTextBoxOpen] = useState(false);
 
-  const phoneNumber = "+263788793302";
-  const message = "Hello, I need help with your services!";
+  const phoneNumber = "+4915227316839";
+  const message = "Hallo";
 
   const handleWhatsappMessage = () => {
     window.open(
@@ -56,7 +56,7 @@ const WhatsApp = () => {
             <hr className="whatsappTextBoxLineBreak" />
             <div className="whatsappTextBoxLower">
               <div className="whatsappTextBoxLowerMessage">
-                <p>Chat With Us, Lets Work Together</p>
+                <p>Hallo, wie kann ich Ihnen helfen?</p>
               </div>
 
               <div

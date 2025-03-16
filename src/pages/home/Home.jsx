@@ -25,7 +25,7 @@ export default function Home() {
       <Header />
       <div className="home">
         <div className="homePosts">
-          <h2 className="homePostsTitle">Top Blog</h2>
+          <h2 className="homePostsTitle">Latest</h2>
           <div className="homePostsPosts">
             {posts.length ? (
               posts

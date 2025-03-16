@@ -16,6 +16,7 @@ import Error from "./components/error/Error";
 import Blog from "./pages/blog/Blog";
 import WhatsApp from "./components/whatsapp/Whatsapp";
 import Gallery from "./pages/gallery/Gallery";
+import Translator from "./components/translator/Translator";
 
 function App() {
   const { user } = useContext(Context);
@@ -24,7 +25,6 @@ function App() {
     <>
       <WhatsApp />
       <TopBar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<Details />} />

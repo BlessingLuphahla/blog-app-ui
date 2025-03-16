@@ -5,7 +5,7 @@ function Gallery() {
   return (
     <div className="gallery">
       <div className="galleryWrapper">
-        
+        <h2>STILL UNDER CONSTRUCTION</h2>
       </div>
     </div>
   );
