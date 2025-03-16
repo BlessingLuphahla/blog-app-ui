@@ -6,23 +6,30 @@
   align-items: center;
 }
 
+.whatsappWrapper {
+  position: relative;
+}
+
 .whatsappButton {
   background-color: #25d366; /* WhatsApp's color */
   color: white;
-  padding: 10px 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50px;
   display: flex;
   align-items: center;
   text-decoration: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
+  padding: 10px;
 }
 
 .whatsappButton:hover {
-  background-color: #128c7e;
+  background-color: #25d365e0;
 }
 
 .whatsappImg {
-  font-size: 16px;
-  font-weight: 100;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
