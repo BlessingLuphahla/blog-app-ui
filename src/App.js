@@ -15,6 +15,7 @@ import Footer from "./pages/footer/Footer";
 import Error from "./components/error/Error";
 import Blogs from "./pages/blogs/Blogs";
 import WhatsApp from "./components/whatsapp/Whatsapp";
+import Gallery from "./pages/gallery/Gallery";
 
 function App() {
   const { user } = useContext(Context);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/gallery" element={<Gallery />} />
 
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
