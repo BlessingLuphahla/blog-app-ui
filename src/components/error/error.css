@@ -1,0 +1,31 @@
+.errorComponent {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: white;
+}
+
+.errorComponentTitle {
+  font-weight: 100;
+  color: red;
+  font-size: 60px;
+}
+
+.errorComponentMessage {
+  font-weight: 100;
+  color: red;
+}
+
+.errorComponentLink {
+  color: red;
+  font-weight: 100;
+  font-size: 20px;
+  background-color: #1e1e1e;
+  padding: 12px;
+  color: white;
+  border-radius: 20px;
+  height: 22px;
+}

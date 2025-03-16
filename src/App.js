@@ -12,6 +12,7 @@ import Edit from "./pages/edit/Edit";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Footer from "./pages/footer/Footer";
+import Error from "./components/error/Error";
 
 function App() {
   const { user } = useContext(Context);
@@ -33,7 +34,7 @@ function App() {
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
 
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
     </>
