@@ -5,7 +5,7 @@
 
 .top {
   width: 100%;
-  height: 50px;
+  height: 70px;
   background-color: var(--bg);
   color: var(--color);
   position: sticky;
@@ -28,6 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .topIcon {
@@ -86,9 +87,16 @@
 }
 
 .hamburger div {
-  width: 36px;
-  height: 6px;
-  background-color: teal;
+  width: 34px;
+  height: 5px;
+  background-color: white;
+}
+
+.topImg {
+  width: 50px;
+  height: 70%;
+  margin: 0px 20px;
+  border-radius: 50%;
 }
 
 @media (max-width: 700px) {

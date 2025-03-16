@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./whatsapp.css"; // Import the CSS file
-import image from "../../images/about.jpg";
+import image from "../../images/logo.jpg";
 import WhatsappIcon from "../../images/whatsapp.svg";
 
 const WhatsApp = () => {

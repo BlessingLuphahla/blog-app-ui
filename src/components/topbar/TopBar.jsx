@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./topbar.css";
+import image from "../../images/logo.jpg";
 
 export default function TopBar() {
-  const publicFolder = "";
   const { user, dispatch } = useContext(Context);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -15,6 +15,7 @@ export default function TopBar() {
   return (
     <div className="top">
       <div className="topCenter">
+        <img className="topImg" src={image} alt="" />
         <div className="mobileMenu">
           <div className="hamburger" onClick={() => setIsMenuOpen(true)}>
             <div></div>
