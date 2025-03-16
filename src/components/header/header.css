@@ -12,14 +12,23 @@
 
 .headerImage {
   width: 100%;
-  height: 520px;
+  height: 700px;
   object-fit: cover;
+  opacity: 0.9;
 }
 
 .headerTitle {
   position: absolute;
-  font-size: 50px;
   color: white;
+  font-weight: 200;
+}
+
+.headerTitle h1 {
+  font-size: 70px;
+}
+
+.headerTitle h2 {
+  font-size: 50px;
 }
 
 @media (max-width: 700px) {

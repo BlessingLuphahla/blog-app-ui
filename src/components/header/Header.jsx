@@ -5,7 +5,10 @@ export default function Header() {
   return (
     <div className="header">
       <img className="headerImage" src={image} alt="" />
-      <h2 className="headerTitle">Its Travel Blog</h2>
+      <div className="headerTitle">
+        <h1>Welcome To</h1>
+        <h2>Its Travel Blog</h2>
+      </div>
     </div>
   );
 }
