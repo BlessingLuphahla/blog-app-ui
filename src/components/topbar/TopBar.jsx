@@ -4,7 +4,7 @@ import { Context } from "../../context/Context";
 import "./topbar.css";
 
 export default function TopBar() {
-  const publicFolder = "http://localhost:5000/images/profiles/";
+  const publicFolder = "";
   const { user, dispatch } = useContext(Context);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

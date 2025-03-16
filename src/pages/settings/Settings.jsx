@@ -7,7 +7,7 @@ import http from "../../utils/axios";
 import "./settings.css";
 
 export default function Settings() {
-  const publicFolder = "http://localhost:5000/images/profiles/";
+  const publicFolder = "";
   const navigate = useNavigate();
   const [profilePreview, setProfilePreview] = useState("");
   const { user, dispatch } = useContext(Context);
