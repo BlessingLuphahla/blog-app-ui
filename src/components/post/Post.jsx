@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import "./post.css";
 
 export default function Post({ post }) {
-  const publicFolder = "http://localhost:5000/images/";
+  const publicFolder = "";
 
   return (
     <article className="post">
       <Link to={`/post/${post?._id}`}>
         {post?.image ? (
-          <img className="postImage" src={publicFolder + post.image} alt="s" />
+          <img className="postImage" src={post.image} alt="s" />
         ) : (
           <img
             className="postImage"

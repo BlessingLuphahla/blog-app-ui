@@ -86,7 +86,7 @@ export default function Edit() {
         post.image && (
           <img
             className="editImage"
-            src={publicFolder + post.image}
+            src={post.image}
             alt="Image"
           />
         )

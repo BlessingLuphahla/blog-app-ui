@@ -111,7 +111,7 @@ export default function TopBar() {
             {user.profileImage ? (
               <img
                 className="topImage"
-                src={publicFolder + user.profileImage}
+                src={user.profileImage}
                 alt="avatar"
               />
             ) : (

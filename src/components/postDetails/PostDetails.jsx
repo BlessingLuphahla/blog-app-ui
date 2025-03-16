@@ -30,7 +30,7 @@ export default function PostDetails() {
         {post?.image ? (
           <img
             className="postDetailsImage"
-            src={publicFolder + post.image}
+            src={post.image}
             alt="image"
           />
         ) : (

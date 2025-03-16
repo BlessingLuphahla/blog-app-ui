@@ -26,7 +26,7 @@ export default function Settings() {
     if (profilePreview) {
       return <img src={URL.createObjectURL(profilePreview)} alt="Profile" />;
     } else if (user.profileImage) {
-      return <img src={publicFolder + user.profileImage} alt="Profile" />;
+      return <img src={user.profileImage} alt="Profile" />;
     }
     return <img src="/images/profile.png" alt="Profile" />;
   };
