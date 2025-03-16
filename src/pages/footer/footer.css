@@ -4,12 +4,12 @@
   height: 60px;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: #1e1e1e;
   align-items: center;
 }
 
 .footerText {
-  color: #1e1e1e;
+  color: white;
   font-size: 16px;
 }
 
@@ -18,5 +18,5 @@
 }
 
 .footerLink:hover {
-  color: rgba(128, 0, 128, 0.625);
+  color: rgb(107, 107, 107);
 }
