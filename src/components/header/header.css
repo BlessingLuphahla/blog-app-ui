@@ -29,7 +29,7 @@
 .headerImage {
   width: 100%;
   height: 700px;
-  margin-top: 10px;
+  margin: 0;
   object-fit: cover;
 }
 
