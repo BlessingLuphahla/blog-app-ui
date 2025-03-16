@@ -44,7 +44,7 @@
   background-color: #1e1e1e;
   position: absolute;
   top: -250px;
-  right: 50px;
+  left: 50px;
   border-radius: 20px;
   padding: 15px;
 }
@@ -145,7 +145,7 @@
     width: 300px;
     height: var(--height);
     top: -270px;
-    right: 20px;
+    left: 20px;
     border-radius: 20px;
   }
 }
