@@ -13,7 +13,7 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import Footer from "./pages/footer/Footer";
 import Error from "./components/error/Error";
-import Blogs from "./pages/blogs/Blogs";
+import Blog from "./pages/blog/Blog";
 import WhatsApp from "./components/whatsapp/Whatsapp";
 import Gallery from "./pages/gallery/Gallery";
 
@@ -34,7 +34,7 @@ function App() {
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/gallery" element={<Gallery />} />
 
         <Route path="/login" element={user ? <Home /> : <Login />} />

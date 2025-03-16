@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./blogs.css";
+import "./blog.css";
 import http from "../../utils/axios";
 import Post from "../../components/post/Post";
 
-function Blogs() {
+function Blog() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function Blogs() {
   },[]);
 
   return (
-    <div className="blogs">
+    <div className="blog">
       {posts.length ? (
         posts.map((post, index) => <Post key={index} post={post} />)
       ) : (
@@ -28,4 +28,4 @@ function Blogs() {
   );
 }
 
-export default Blogs;
+export default Blog;

@@ -33,7 +33,7 @@ export default function TopBar() {
                 </Link>
               </div>
               <div className="mobileMenuItem">
-                <Link onClick={() => setIsMenuOpen(false)} to={"/blogs"}>
+                <Link onClick={() => setIsMenuOpen(false)} to={"/blog"}>
                   BLOGS
                 </Link>
               </div>
@@ -83,7 +83,7 @@ export default function TopBar() {
             <Link to={"/"}>HOME</Link>
           </li>
           <li className="topListItem">
-            <Link to={"/blogs"}>BLOGS</Link>
+            <Link to={"/blog"}>BLOGS</Link>
           </li>
           <li className="topListItem">
             <Link to={"/gallery"}>GALLERY</Link>

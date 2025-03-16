@@ -24,7 +24,7 @@ export default function Edit() {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await http.get(`/post/${postId}`);
+      const response = await http.get(`/post/find/${postId}`);
       const post = response.data;
 
       setPost(post);

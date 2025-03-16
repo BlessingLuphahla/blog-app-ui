@@ -12,7 +12,7 @@ export default function PostDetails() {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const response = await http.get(`/post/${postId}`);
+      const response = await http.get(`/post/find/${postId}`);
 
       setPost(response.data);
     };
