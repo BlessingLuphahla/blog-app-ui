@@ -49,7 +49,7 @@ export default function Sidebar() {
       </div>
 
       <div className="sidebarItem">
-        <span className="sidebarTitle">FOLLOW US</span>
+        <span className="sidebarTitle">FOLLOW ME</span>
         <div className="sidebarSocial">
           <i className="sidebarIcon fa-brands fa-facebook-square"></i>
           <i className="sidebarIcon fa-brands fa-twitter-square"></i>
