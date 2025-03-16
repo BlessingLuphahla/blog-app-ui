@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import http from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
+import image from "../../images/logo.jpg";
 
 export default function Create() {
   const {
@@ -57,7 +58,10 @@ export default function Create() {
 
   return (
     <div className="create">
+      <h3 className="createTitle">Create Section</h3>
+      <img className="createImg" src={image} alt="" />
       <div className="createSection">
+        <h3 className="createSectionTitle">Create a Blog</h3>
         {filePreview && isOpenFilePreview && (
           <div className="previewContainer">
             <div
@@ -125,6 +129,10 @@ export default function Create() {
             Publish
           </button>
         </form>
+      </div>
+
+      <div className="createSection">
+        <h3 className="createSectionTitle">Create a Blog</h3>
       </div>
     </div>
   );
