@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footerText">
-        Copyright © {currentYear} Blog app |{" "}
+        Copyright © {currentYear} It's Travel |{" "}
         <a className="footerLink" href="http://pakamatech.com">By Pakama Tech</a>
       </div>
     </div>
