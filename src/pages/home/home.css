@@ -4,6 +4,30 @@
   color: var(--color);
 }
 
+.homePosts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 8;
+}
+
+.homePostsPosts {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  padding: 10px;
+  gap: 10px;
+}
+
+.homePostsTitle {
+  padding: 5px;
+  margin: 20px 0px;
+}
+
 @media (max-width: 700px) {
   .home {
     display: flex;

@@ -5,15 +5,10 @@ import http from "../../utils/axios";
 import "./postDetails.css";
 
 export default function PostDetails() {
-  const publicFolder =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:5000/images/"
-      : "https://blog-app-api-7q63.onrender.com/images/";
-
   const [post, setPost] = useState({});
   const { postId } = useParams();
 
-  const navigate = useNavigate();
+  const { user } = useContext(Context);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -28,28 +23,24 @@ export default function PostDetails() {
     <div className="postDetails">
       <div className="postDetailsWrapper">
         {post?.image ? (
-          <img
-            className="postDetailsImage"
-            src={post.image}
-            alt="image"
-          />
+          <img className="postDetailsImage" src={post.image} alt="ss" />
         ) : (
           <img
             className="postDetailsImage"
             src="/images/image-not-available.jpg"
-            alt="image"
+            alt="ss"
           />
         )}
         <h1 className="postDetailsTitle">
           {post?.title}
-          {
+          {user && (
             <span className="postDetailsEdit">
               <Link to={`/edit/${post?._id}`}>
-                <i className="postDetailsIcon edit fa-solid fa-pen-to-square"></i>
+                <i className="postDetailsIcon edit">Edit</i>
               </Link>
-              <i className="postDetailsIcon delete fa-solid fa-trash-can"></i>
+              <i className="postDetailsIcon delete">Delete</i>
             </span>
-          }
+          )}
         </h1>
         <div className="postDetailsInfo">
           <span className="postDetailsAuthor">
