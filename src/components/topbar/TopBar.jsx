@@ -32,13 +32,13 @@ export default function TopBar() {
                 </Link>
               </div>
               <div className="mobileMenuItem">
-                <Link onClick={() => setIsMenuOpen(false)} to={"/about"}>
-                  ABOUT
+                <Link onClick={() => setIsMenuOpen(false)} to={"/blogs"}>
+                  BLOGS
                 </Link>
               </div>
               <div className="mobileMenuItem">
-                <Link onClick={() => setIsMenuOpen(false)} to={"/blogs"}>
-                  BLOGS
+                <Link onClick={() => setIsMenuOpen(false)} to={"/about"}>
+                  ABOUT
                 </Link>
               </div>
               <div className="mobileMenuItem">
@@ -77,10 +77,10 @@ export default function TopBar() {
             <Link to={"/"}>HOME</Link>
           </li>
           <li className="topListItem">
-            <Link to={"/about"}>ABOUT</Link>
+            <Link to={"/blogs"}>BLOGS</Link>
           </li>
           <li className="topListItem">
-            <Link to={"/blogs"}>BLOGS</Link>
+            <Link to={"/about"}>ABOUT</Link>
           </li>
           <li className="topListItem">
             <Link to={"/contact"}>CONTACT</Link>
@@ -109,11 +109,7 @@ export default function TopBar() {
             }}
           >
             {user.profileImage ? (
-              <img
-                className="topImage"
-                src={user.profileImage}
-                alt="avatar"
-              />
+              <img className="topImage" src={user.profileImage} alt="avatar" />
             ) : (
               <img
                 className="topImage"
