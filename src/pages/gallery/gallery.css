@@ -10,4 +10,9 @@
   font-weight: 400;
   color: lightgray;
   font-size: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
