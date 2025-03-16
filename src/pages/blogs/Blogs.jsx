@@ -20,8 +20,8 @@ function Blogs() {
       {posts.length ? (
         posts.map((post, index) => <Post key={index} post={post} />)
       ) : (
-        <div className="postNotFound">
-          <h3 className="postNotFoundTitle">There are no blog posts yet...</h3>
+        <div className="blogsPostNotFound">
+          <h3 className="blogsPostNotFoundTitle">There are no blog posts yet...</h3>
         </div>
       )}
     </div>
