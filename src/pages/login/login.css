@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background: green,
-    url('../../images/hero-main-pic.webp');
+    url('../../images/hero-main-pic.jpg');
   background-size: cover;
   font-family: "Varela", sans-serif;
 }

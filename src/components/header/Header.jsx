@@ -1,5 +1,5 @@
 import "./header.css";
-import image from "../../images/hero-main-pic.webp";
+import image from "../../images/hero-main-pic.jpg";
 
 export default function Header() {
   return (
