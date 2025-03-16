@@ -1,12 +1,31 @@
 .create {
   padding: 10px;
   padding-top: 50px;
-  height: 75vh;
+  height: max-content;
+}
+
+.previewContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.previewContainerClose {
+  font-size: 60px;
+  color: white;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .createImage {
+  padding: 10px;
+  background-color: white;
   margin-left: 150px;
-  width: 70vw;
+  width: 80%;
   height: 250px;
   border-radius: 10px;
   object-fit: cover;
@@ -20,6 +39,7 @@
   margin-left: 150px;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .createIcon {
@@ -37,21 +57,34 @@
 }
 
 .createInput {
-  --box-shadow: 1px;
-  font-size: 18px;
+  --box-shadow: 0.6px;
+  font-size: 15px;
   font-weight: 500;
   border: 1px solid teal;
   box-shadow: var(--box-shadow) var(--box-shadow) var(--box-shadow) 0px teal;
   padding: 10px;
-  width: 70vw;
+  width: 68vw;
   outline: none;
   margin: 5px;
   border-radius: 10px;
 }
 
+.createFormGroupOptions {
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.createInput.category {
+  width: 200px;
+}
+
 .createText {
   font-size: 14px;
   min-height: 400px;
+  width: 70vw;
 }
 
 .createSubmit {

@@ -56,24 +56,33 @@ export default function Create() {
   return (
     <div className="create">
       {filePreview && (
-        <img
-          className="createImage"
-          src={URL.createObjectURL(filePreview)}
-          alt="ss"
-        />
+        <div className="previewContainer">
+          <div className="previewContainerClose">×</div>
+          <img
+            className="createImage"
+            src={URL.createObjectURL(filePreview)}
+            alt="ss"
+          />
+        </div>
       )}
       <form className="createForm" onSubmit={handleSubmit(onSubmit)}>
         <div className="createFormGroup">
-          <label htmlFor="fileInput">
-            <i className="createIcon fa-solid fa-arrow-up-from-bracket"></i>
-          </label>
-          <input
-            type="file"
-            id="fileInput"
-            style={{ display: "none" }}
-            {...register("file")}
-            onChange={onSelectFile}
-          />
+          <div className="createFormGroupOptions">
+            <input
+              type="file"
+              id="fileInput"
+              {...register("file")}
+              onChange={onSelectFile}
+            />
+            <input
+              type="text"
+              placeholder="Category"
+              className="createInput category"
+              autoFocus={true}
+              {...register("category", { required: true, minLength: 5 })}
+            />
+          </div>
+
           <input
             type="text"
             placeholder="Title"
