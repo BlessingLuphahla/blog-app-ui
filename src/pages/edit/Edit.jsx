@@ -43,9 +43,6 @@ export default function Edit() {
   };
 
   const onSubmit = async (formData) => {
-    console.log("SUBMIT / EDIT", formData);
-    console.log(formData.file);
-
     const body = {
       title: formData.title,
       description: formData.description,
@@ -83,13 +80,7 @@ export default function Edit() {
           alt="Image"
         />
       ) : (
-        post.image && (
-          <img
-            className="editImage"
-            src={post.image}
-            alt="Image"
-          />
-        )
+        post.image && <img className="editImage" src={post.image} alt="Image" />
       )}
       <form className="editForm" onSubmit={handleSubmit(onSubmit)}>
         <div className="editFormGroup">

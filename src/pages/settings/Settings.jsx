@@ -55,8 +55,6 @@ export default function Settings() {
   };
 
   const onSubmit = async (formData) => {
-    // console.log(formData);
-
     const body = {
       email: formData.email,
     };

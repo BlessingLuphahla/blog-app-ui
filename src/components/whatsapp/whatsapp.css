@@ -139,4 +139,12 @@
 }
 
 @media (max-width: 700px) {
+  .whatsappTextBox {
+    --height: 250px;
+    width: 300px;
+    height: var(--height);
+    top: -270px;
+    right: 20px;
+    border-radius: 20px;
+  }
 }

@@ -18,13 +18,11 @@ export default function Login() {
 			const name = nameRef.current.value;
 			const password = passwordRef.current.value;
 	
-			// console.log('credits: ', name, password);
 			const response = await http.post('/auth/login', {
 				username: name,
 				password: password
 			});
 
-			// console.log('login response: ', response);
 			if (response.data) {
 				dispatch({type: 'LOGIN_SUCCESS', payload: response.data});
 			}

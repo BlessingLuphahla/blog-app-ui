@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./whatsapp.css"; // Import the CSS file
 import image from "../../images/about.jpg";
 import WhatsappIcon from "../../images/whatsapp.svg";
-import { Link } from "react-router-dom";
 
 const WhatsApp = () => {
   const [isTextBoxOpen, setIsTextBoxOpen] = useState(false);
