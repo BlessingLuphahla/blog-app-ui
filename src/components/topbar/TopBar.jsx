@@ -37,6 +37,11 @@ export default function TopBar() {
                 </Link>
               </div>
               <div className="mobileMenuItem">
+                <Link onClick={() => setIsMenuOpen(false)} to={"/blogs"}>
+                  BLOGS
+                </Link>
+              </div>
+              <div className="mobileMenuItem">
                 <Link onClick={() => setIsMenuOpen(false)} to={"/contact"}>
                   CONTACT
                 </Link>
@@ -73,6 +78,9 @@ export default function TopBar() {
           </li>
           <li className="topListItem">
             <Link to={"/about"}>ABOUT</Link>
+          </li>
+          <li className="topListItem">
+            <Link to={"/blogs"}>BLOGS</Link>
           </li>
           <li className="topListItem">
             <Link to={"/contact"}>CONTACT</Link>
