@@ -20,9 +20,9 @@ function About() {
           traveler. Join my community of wanderers and discover the wonders of
           the world through our stories, photography, and travel resources.
           Ready to pack your bags? Let us guide you to your next unforgettable
-          destination. *My Mission:* To encourage exploration, ignite
+          destination. <b>My Mission: </b>To encourage exploration, ignite
           curiosity, and inspire travelers by providing authentic travel content
-          and practical advice. *My Vision:* To become the leading source of
+          and practical advice. <b>My Vision:</b> To become the leading source of
           inspiration and guidance for travelers across the globe, fostering a
           community of passionate explorers.
         </p>
