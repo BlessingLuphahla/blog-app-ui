@@ -15,10 +15,12 @@ export default function Create() {
   const { user } = useContext(Context);
   const navigate = useNavigate();
   const [filePreview, setFilePreview] = useState("");
+  const [isOpenFilePreview, setIsOpenFilePreview] = useState(false);
+  const [categories, setCategories] = useState("");
 
   const onSelectFile = (event) => {
     const file = event.target.files[0];
-
+    setIsOpenFilePreview(true);
     setFilePreview(file);
     setValue("file", file);
   };
@@ -28,7 +30,7 @@ export default function Create() {
       title: formData.title,
       description: formData.description,
       author: user.username,
-      categories: [],
+      categories: categories.split(","),
     };
 
     if (formData.file?.size) {
@@ -55,9 +57,14 @@ export default function Create() {
 
   return (
     <div className="create">
-      {filePreview && (
+      {filePreview && isOpenFilePreview && (
         <div className="previewContainer">
-          <div className="previewContainerClose">×</div>
+          <div
+            className="previewContainerClose"
+            onClick={() => setIsOpenFilePreview(false)}
+          >
+            ×
+          </div>
           <img
             className="createImage"
             src={URL.createObjectURL(filePreview)}
@@ -76,10 +83,11 @@ export default function Create() {
             />
             <input
               type="text"
-              placeholder="Category"
+              placeholder="Enter categories (should be comma seperated)"
               className="createInput category"
               autoFocus={true}
               {...register("category", { required: true, minLength: 5 })}
+              onChange={(e) => setCategories(e.target.value)}
             />
           </div>
 
