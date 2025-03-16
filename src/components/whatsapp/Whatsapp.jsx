@@ -5,14 +5,15 @@ const WhatsApp = () => {
   const phoneNumber = "+1234567890"; // Replace with your actual number
   const message = "Hello, I need help with your services!"; // Predefined message
 
+  // href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+  //   message
+  // )}`}
+
   return (
     <div className="whatsapp">
       <div className="whatsappWrapper">
         <div className="whatsappIcon">
-          <a
-            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-              message
-            )}`}
+          <button
             className="whatsappButton"
             target="_blank"
             rel="noopener noreferrer"
@@ -28,7 +29,7 @@ const WhatsApp = () => {
                 fill="white"
               />
             </svg>
-          </a>
+          </button>
         </div>
         <div className="whatsappTextBox"></div>
       </div>
