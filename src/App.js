@@ -14,12 +14,14 @@ import Contact from "./pages/contact/Contact";
 import Footer from "./pages/footer/Footer";
 import Error from "./components/error/Error";
 import Blogs from "./pages/blogs/Blogs";
+import WhatsApp from "./components/whatsapp/Whatsapp";
 
 function App() {
   const { user } = useContext(Context);
 
   return (
     <>
+      <WhatsApp />
       <TopBar />
 
       <Routes>

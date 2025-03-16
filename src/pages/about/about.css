@@ -3,6 +3,11 @@
   display: flex;
   justify-content: center;
   color: white;
+  align-items: normal;
+  gap: 50px;
+  height: max-content;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 .aboutItem {
@@ -14,13 +19,19 @@
   line-height: 20px;
 }
 
+.aboutParagraph {
+  background-color: white;
+  line-height: 30px;
+  padding: 20px;
+  color: black;
+  border-radius: 10px;
+}
+
 .aboutTitle {
   margin: 13px;
   margin-bottom: 25px;
   padding: 5px;
-  width: 80%;
-  border-top: 1px solid #a7a4a4;
-  border-bottom: 1px solid #a7a4a4;
+  width: 30%;
   font-family: "Varela Round", sans-serif;
   font-size: 12px;
   font-weight: 600;
