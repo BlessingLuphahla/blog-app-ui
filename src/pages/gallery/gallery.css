@@ -1,5 +1,5 @@
 .gallery {
-  height: 85vh;
+  height: max-content;
   width: 100%;
   display: flex;
   justify-content: center;

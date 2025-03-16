@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../images/hero-main-pic.jpg";
+import image from "../../images/hero-main-pic.webp";
 import "./contact.css";
 
 function Contact() {

@@ -14,20 +14,24 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 function Gallery() {
+  const wHR = 10 / 9;
+
+  const WithAndHeight = 1000;
+
   return (
     <div className="gallery">
       <div className="galleryWrapper">
         <ImageList
-          sx={{ width: 500, height: 450 }}
+          sx={{ width: WithAndHeight * wHR, height: WithAndHeight }}
           variant="quilted"
-          cols={4}
-          rowHeight={121}
+          cols={5}
+          rowHeight={221}
         >
           {itemData.map((item) => (
             <ImageListItem
               key={item.img}
-              cols={item.cols || 1}
-              rows={item.rows || 1}
+              // cols={item.cols || 1}
+              // rows={item.rows || 1}
             >
               <img
                 {...srcset(item.img, 121, item.rows, item.cols)}
