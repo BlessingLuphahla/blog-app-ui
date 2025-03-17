@@ -49,3 +49,34 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 700px) {
+  .gallery {
+    padding: 0px;
+    margin-bottom: 5px;
+  }
+
+  .galleryWrapper {
+    padding: 5px;
+    flex-direction: column;
+  }
+
+  .galleryImageWrapper {
+    height: 300px;
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  .galleryImage {
+    border-radius: 10px;
+  }
+
+  .gallerySectionTwo {
+    flex-direction: column;
+  }
+
+  .gallerySectionTwoImageWrapper {
+    height: 400px;
+    width: 98%;
+  }
+}
