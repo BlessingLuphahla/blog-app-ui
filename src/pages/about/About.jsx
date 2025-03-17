@@ -15,13 +15,7 @@ function About() {
           <span className="aboutTitle">FOLLOW ME</span>
           <p className="aboutParagraph">
             {" "}
-            Stay connected with me on social media to catch the latest blog
-            posts, travel tips, and special promotions to enhance your travel
-            experiences.I believe travel is not just about visiting new places,
-            but about growing as a person, embracing new cultures, and creating
-            memories that will last a lifetime. At <b>Alex's blog</b> , I
-            invite you to join me on this incredible journey. Let’s wander
-            together!
+            Bleiben Sie über die sozialen Medien mit mir in Verbindung und verpassen Sie keine Blogbeiträge, Reisetipps und Sonderangebote mehr, um Ihre Reiseerlebnisse zu verbessern. Ich glaube, beim Reisen geht es nicht nur darum, neue Orte zu besuchen, sondern auch darum, persönlich zu wachsen, neue Kulturen kennenzulernen und unvergessliche Erinnerungen zu schaffen. Auf Alex' Blog lade ich Sie ein, mich auf dieser unglaublichen Reise zu begleiten. Lassen Sie uns gemeinsam wandern!
           </p>
         </div>
         <br />
