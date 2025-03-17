@@ -24,7 +24,7 @@ function Gallery() {
           if (!sameIndex) return;
           return (
             <div className="galleryImageWrapper">
-              <img src={item.img} alt="" className="galleryImage" />
+              <img key={index} src={item.img} alt="" className="galleryImage" />
             </div>
           );
         })}
@@ -34,7 +34,12 @@ function Gallery() {
         {itemData.map((item, index) => {
           return (
             <div className="gallerySectionTwoImageWrapper">
-              <img src={item.img} alt="" className="gallerySectionTwoImage" />
+              <img
+                key={index}
+                src={item.img}
+                alt=""
+                className="gallerySectionTwoImage"
+              />
             </div>
           );
         })}
