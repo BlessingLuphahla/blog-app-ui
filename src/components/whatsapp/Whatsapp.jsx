@@ -58,7 +58,6 @@ const WhatsApp = () => {
               <div className="whatsappTextBoxLowerMessage">
                 <p>Hallo, wie kann ich Ihnen helfen?</p>
               </div>
-
               <div
                 onClick={handleWhatsappMessage}
                 className="whatsappTextBoxLowerButton"

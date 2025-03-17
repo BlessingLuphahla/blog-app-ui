@@ -6,7 +6,7 @@ import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import { Route, Routes } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Context } from "./context/Context";
 import Edit from "./pages/edit/Edit";
 import About from "./pages/about/About";
@@ -16,7 +16,7 @@ import Error from "./components/error/Error";
 import Blog from "./pages/blog/Blog";
 import WhatsApp from "./components/whatsapp/Whatsapp";
 import Gallery from "./pages/gallery/Gallery";
-import Translator from "./components/translator/Translator";
+import ToTop from "./components/toTop/ToTop";
 
 function App() {
   const { user } = useContext(Context);
@@ -25,6 +25,7 @@ function App() {
     <>
       <WhatsApp />
       <TopBar />
+      <ToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<Details />} />
