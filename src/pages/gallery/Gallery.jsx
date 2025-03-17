@@ -5,45 +5,30 @@ import { itemData } from "../../utils/galleryData";
 
 function Gallery() {
   const [imageIndex, setImageIndex] = useState(0);
+  const galleryImages = itemData.map((item, index) => (
+    <div
+      key={index}
+      className="galleryImageWrapper"
+      style={{
+        opacity: index === imageIndex ? 1 : 0,
+        transition: "opacity 0.5s ease-in-out",
+      }}
+    >
+      <img src={item.img} alt="" className="galleryImage" />
+    </div>
+  ));
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImageIndex((prevIndex) => {
-        return prevIndex === itemData.length - 1 ? 0 : prevIndex + 1;
-      });
+      setImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [imageIndex]);
+  }, []);
 
   return (
     <div className="gallery">
-      <div className="galleryWrapper">
-        {itemData.map((item, index) => {
-          const sameIndex = index === imageIndex;
-          if (!sameIndex) return;
-          return (
-            <div className="galleryImageWrapper">
-              <img key={index} src={item.img} alt="" className="galleryImage" />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="gallerySectionTwo">
-        {itemData.map((item, index) => {
-          return (
-            <div className="gallerySectionTwoImageWrapper">
-              <img
-                key={index}
-                src={item.img}
-                alt=""
-                className="gallerySectionTwoImage"
-              />
-            </div>
-          );
-        })}
-      </div>
+      <div className="galleryWrapper">{galleryImages}</div>
     </div>
   );
 }
