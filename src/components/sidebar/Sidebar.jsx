@@ -22,18 +22,7 @@ export default function Sidebar() {
         <span className="sidebarTitle">ABOUT ME</span>
         <img src={image} alt="" />
         <p>
-          Welcome to my blog! I’m excited to have you here. This space is
-          dedicated to sharing insights, experiences, and ideas on topics that
-          matter to me, ranging from web development and technology to design,
-          business, and beyond. I believe in the power of innovation, continuous
-          learning, and creating meaningful connections. My goal is to provide
-          valuable content that educates, inspires, and sparks conversations.
-          Whether you're here to explore the latest trends, get practical tips,
-          or simply enjoy thought-provoking posts, I hope you'll find something
-          that resonates with you. Feel free to browse through my articles,
-          leave your comments, and reach out if you'd like to connect! I'm
-          always eager to engage with like-minded individuals and hear different
-          perspectives.
+        Welcome to Alex's Blog – your go-to travel guide! I share insights, tips, and curated itineraries to inspire your next adventure. Whether it's a weekend getaway or a dream trip, find expert recommendations and stunning photography to fuel your wanderlust. Join my community and explore the world with me!
         </p>
       </div>
 
