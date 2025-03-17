@@ -22,7 +22,7 @@ export default function Sidebar() {
         <span className="sidebarTitle">ABOUT ME</span>
         <img src={image} alt="" />
         <p>
-        Welcome to Alex's Blog – your go-to travel guide! I share insights, tips, and curated itineraries to inspire your next adventure. Whether it's a weekend getaway or a dream trip, find expert recommendations and stunning photography to fuel your wanderlust. Join my community and explore the world with me!
+        Willkommen auf Alex' Blog – deinem Reiseführer! Ich teile Einblicke, Tipps und kuratierte Reiserouten, um dich für dein nächstes Abenteuer zu inspirieren. Ob Wochenendtrip oder Traumreise – hier findest du Expertentipps und atemberaubende Fotos, die deine Reiselust wecken. Werde Teil meiner Community und entdecke mit mir die Welt!
         </p>
       </div>
 
