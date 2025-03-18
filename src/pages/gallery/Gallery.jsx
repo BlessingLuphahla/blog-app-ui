@@ -27,18 +27,17 @@ function Gallery() {
 
   return (
     <div className="gallery">
-      <div className="galleryWrapper">
-        {itemData.map((item, index) => (
-          <div key={index} className="galleryImageWrapper">
-            <img
-              src={item.img}
-              alt=""
-              className="galleryImage"
-              onClick={() => openModal(index)}
-            />
-          </div>
-        ))}
-      </div>
+      {/* Gallery Images */}
+      {itemData.map((item, index) => (
+        <div key={index} className="galleryImageWrapper">
+          <img
+            src={item.img}
+            alt={`Gallery Item ${index + 1}`}  // Add alt text for accessibility
+            className="galleryImage"
+            onClick={() => openModal(index)}
+          />
+        </div>
+      ))}
 
       {/* Modal */}
       {isModalOpen && (
