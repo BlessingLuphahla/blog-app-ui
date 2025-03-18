@@ -63,7 +63,7 @@ const WhatsApp = () => {
                 className="whatsappTextBoxLowerButton"
               >
                 <img src={WhatsappIcon} alt="" className="whatsappButton" />
-                <span>Chat On Whatsapp</span>
+                <span>Chatten Sie auf WhatsApp</span>
               </div>
             </div>
           </div>
