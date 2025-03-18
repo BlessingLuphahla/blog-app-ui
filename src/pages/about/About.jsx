@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import logo from "../../images/logo.png"; // Add your logo path
+
 
 function About() {
   return (
