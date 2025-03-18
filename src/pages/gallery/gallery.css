@@ -1,23 +1,33 @@
+/* Gallery Styles */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically adjusts columns */
-  gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamically adjusts columns */
+  gap: 20px; /* Space between images */
+  justify-items: center; /* Center images within each grid cell */
+  margin-top: 20px; /* Add some spacing from the top */
+}
+
+.galleryImageWrapper {
+  width: 100%; /* Make sure image container fills its grid cell */
+  height: 250px; /* Set a fixed height for the image wrapper */
+  overflow: hidden; /* Ensure images don't overflow */
+  border-radius: 8px; /* Rounded corners */
 }
 
 .galleryImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Makes images cover their container without stretching */
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .galleryImage:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
 }
 
+/* Modal Styles */
 .modal {
   position: fixed;
   top: 0;
@@ -29,12 +39,12 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 0; /* Start as invisible */
-  transition: opacity 0.3s ease; /* Fade in */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .modal.show {
-  opacity: 1; /* Fade to visible when modal is active */
+  opacity: 1;
 }
 
 .modalContent {
@@ -46,7 +56,7 @@
 
 @keyframes modalIn {
   from {
-    transform: scale(0.9); /* Start slightly smaller */
+    transform: scale(0.9);
     opacity: 0;
   }
   to {
@@ -55,7 +65,14 @@
   }
 }
 
-.prevBtn, .nextBtn {
+.modalImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.prevBtn,
+.nextBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -76,14 +93,15 @@
   transform: scale(1.1); /* Slight grow effect */
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust columns for mobile */
   }
 
   .prevBtn,
   .nextBtn {
-    font-size: 24px; /* Smaller button size on mobile */
+    font-size: 24px;
     padding: 8px;
   }
 }
