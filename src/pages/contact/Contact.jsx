@@ -17,8 +17,10 @@ function Contact() {
           </h2>
           <h3 className="contactEmail">Email: info@itstravel.com</h3>
         </div>
-        <img className="contactImage" src={image} alt="" />
+
+       <img className="contactImage" src={image} alt="" />
       </div>
+
       <div className="contactSecondSection">
         <form className="contactForm" onSubmit={(e) => handleSubmit(e)}>
           <input id="name" type="text" placeholder="Your Name" />
