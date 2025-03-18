@@ -11,18 +11,6 @@
   font-family: 'Roboto', sans-serif; /* Modern font */
 }
 
-/* Logo Section */
-.aboutLogo {
-  width: 140px; /* Slightly larger logo */
-  height: auto;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease; /* Logo hover effect */
-}
-
-.aboutLogo:hover {
-  transform: scale(1.1); /* Slight zoom effect on hover */
-}
-
 /* About Content */
 .aboutItem {
   display: flex;
@@ -85,4 +73,3 @@
     font-size: 16px;
   }
 }
-
