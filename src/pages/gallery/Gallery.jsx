@@ -1,34 +1,59 @@
-/* eslint-disable array-callback-return */
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./gallery.css";
 import { itemData } from "../../utils/galleryData";
 
 function Gallery() {
   const [imageIndex, setImageIndex] = useState(0);
-  const galleryImages = itemData.map((item, index) => (
-    <div
-      key={index}
-      className="galleryImageWrapper"
-      style={{
-        opacity: index === imageIndex ? 1 : 0,
-        transition: "opacity 0.5s ease-in-out",
-      }}
-    >
-      <img src={item.img} alt="" className="galleryImage" />
-    </div>
-  ));
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
-    }, 3000);
+  const openModal = (index) => {
+    setImageIndex(index);
+    setIsModalOpen(true);
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
+  };
+
+  const prevImage = () => {
+    setImageIndex(
+      (prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length
+    );
+  };
 
   return (
     <div className="gallery">
-      <div className="galleryWrapper">{galleryImages}</div>
+      <div className="galleryWrapper">
+        {itemData.map((item, index) => (
+          <div key={index} className="galleryImageWrapper">
+            <img
+              src={item.img}
+              alt=""
+              className="galleryImage"
+              onClick={() => openModal(index)}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+            <img src={itemData[imageIndex].img} alt="" className="modalImage" />
+            <button className="prevBtn" onClick={prevImage}>
+              &lt;
+            </button>
+            <button className="nextBtn" onClick={nextImage}>
+              &gt;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

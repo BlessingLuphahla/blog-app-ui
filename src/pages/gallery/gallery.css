@@ -1,82 +1,85 @@
+/* Gallery Styles */
 .gallery {
   display: flex;
-  height: max-content;
-  flex-direction: column;
-  padding: 10px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .galleryWrapper {
   display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  padding: 20px;
+  gap: 10px;
 }
 
 .galleryImageWrapper {
-  height: 500px;
-  width: 500px;
-  padding: 2px;
-  border: 1px solid black;
-  border-radius: 20px;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
 }
 
 .galleryImage {
-  border-radius: 20px;
-  width: 100%;
-  height: 100%;
-}
-
-.gallerySectionTwo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.gallerySectionTwoImageWrapper {
-  height: 400px;
-  border: 1px solid black;
-  width: 400px;
-  gap: 1px;
-}
-
-.gallerySectionTwoImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 700px) {
-  .gallery {
-    padding: 0px;
-    margin-bottom: 5px;
-  }
+.galleryImage:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
 
-  .galleryWrapper {
-    padding: 5px;
-    flex-direction: column;
-  }
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .galleryImageWrapper {
-    height: 300px;
-    width: 90%;
-    border-radius: 10px;
-  }
+.modalContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
 
-  .galleryImage {
-    border-radius: 10px;
-  }
+.modalImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
 
-  .gallerySectionTwo {
-    flex-direction: column;
-  }
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 30px;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
 
-  .gallerySectionTwoImageWrapper {
-    height: 400px;
-    width: 98%;
-  }
+.prevBtn {
+  left: 10px;
+}
+
+.nextBtn {
+  right: 10px;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
