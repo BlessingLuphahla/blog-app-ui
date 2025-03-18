@@ -20,7 +20,7 @@ html, body {
   align-items: center;
 }
 
-/* First Section: Image & Text */
+/* First Section: Text Only */
 .contactFirstSection {
   display: flex;
   flex-direction: column;
@@ -30,17 +30,6 @@ html, body {
   width: 100%;
   gap: 20px;
   overflow: hidden; /* Ensures no overflow */
-}
-
-/* Contact Image (Above Text) */
-.contactImage {
-  width: 80%;
-  max-width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Contact Text */
@@ -133,11 +122,6 @@ textarea#message {
     flex-direction: column;
     text-align: center;
     gap: 15px;
-  }
-
-  .contactImage {
-    width: 90%;
-    max-height: 200px;
   }
 
   .contactTitle {

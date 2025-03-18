@@ -1,5 +1,4 @@
 import React from "react";
-import image from "../../images/hero-main-pic.jpg";
 import "./contact.css";
 
 function Contact() {
@@ -17,8 +16,6 @@ function Contact() {
           </h2>
           <h3 className="contactEmail">Email: info@itstravel.com</h3>
         </div>
-
-       <img className="contactImage" src={image} alt="" />
       </div>
 
       <div className="contactSecondSection">
