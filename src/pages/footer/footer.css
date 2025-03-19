@@ -16,7 +16,8 @@
 }
 
 .footerAbout h3,
-.footerNav h3 {
+.footerNav h3,
+.footerSocials h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #f0a500;
@@ -53,6 +54,28 @@
   color: #f0a500;
 }
 
+/* Social Media Section */
+.footerSocials {
+  flex: 1;
+  max-width: 200px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcons a {
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: #f0a500;
+  transform: scale(1.2);
+}
+
 .footerText {
   width: 100%;
   text-align: center;
@@ -80,8 +103,13 @@
   }
 
   .footerAbout,
-  .footerNav {
+  .footerNav,
+  .footerSocials {
     max-width: 100%;
     margin-bottom: 20px;
+  }
+
+  .socialIcons {
+    justify-content: center;
   }
 }
