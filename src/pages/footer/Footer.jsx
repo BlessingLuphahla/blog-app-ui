@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import "./footer.css";
-import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
-  const currentYear = new Date().getFullYear() || 2025;
-  const whatsappNumber = "1234567890"; // Replace with your actual number
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="footer">
@@ -31,25 +29,6 @@ function Footer() {
           <li><a href="/gallery">Gallery</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
-      </div>
-
-      {/* Social Media Links */}
-      <div className="footerSocials">
-        <h3>Follow Us</h3>
-        <div className="socialIcons">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <FaFacebookF />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <FaInstagram />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <FaTwitter />
-          </a>
-          <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <FaWhatsapp />
-          </a>
-        </div>
       </div>
 
       {/* Copyright Section */}
