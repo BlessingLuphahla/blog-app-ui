@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import http from "../../utils/axios";
 import "./sidebar.css";
-import image from "../../images/about.jpg";
+import image from "../../images/logo.jpg";
 
 export default function Sidebar() {
   const [categories, setCategories] = useState([]);
