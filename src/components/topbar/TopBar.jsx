@@ -48,11 +48,6 @@ export default function TopBar() {
                 </Link>
               </div>
               <div className="mobileMenuItem">
-                <Link onClick={() => setIsMenuOpen(false)} to={"/about"}>
-                  ABOUT
-                </Link>
-              </div>
-              <div className="mobileMenuItem">
                 <Link onClick={() => setIsMenuOpen(false)} to={"/contact"}>
                   CONTACT
                 </Link>
