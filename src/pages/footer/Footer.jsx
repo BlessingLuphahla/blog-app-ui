@@ -36,18 +36,18 @@ function Footer() {
       <div className="footerSocials">
         <h3>Follow Us</h3>
         <div className="socialIcons">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <FaFacebookF />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+  <FaFacebookF />
+</a>
+<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+  <FaInstagram />
+</a>
+<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
   <FaTwitter />
 </a>
-          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-            <FaWhatsapp />
-          </a>
+<a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <FaWhatsapp />
+</a>
         </div>
       </div>
 
