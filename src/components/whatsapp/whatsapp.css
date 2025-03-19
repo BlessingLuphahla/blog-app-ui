@@ -15,15 +15,15 @@
 .whatsappButton {
   background-color: #25d366;
   color: white;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50px;
   display: flex;
   align-items: center;
   text-decoration: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
-  padding: 8px;
+  padding: 10px;
   border: none;
   cursor: pointer;
 }
@@ -39,15 +39,15 @@
 }
 
 .whatsappTextBox {
-  --height: 250px;
-  width: 300px;
-  height: var(--height);
+  width: 320px;
+  height: 280px;
   background-color: #1e1e1e;
   position: absolute;
-  top: -250px;
+  top: -280px;
   left: 50px;
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .whatsappTextBoxClose {
@@ -81,7 +81,7 @@
 .whatsappTextBoxUpperProfilePic {
   width: 50px;
   height: 50px;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .whatsappTextBoxUpperProfileOnlineStatus {
@@ -97,12 +97,12 @@
 
 .whatsappTextBoxUpperProfileDetailsName {
   font-weight: 900;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .whatsappTextBoxUpperProfileDetailsOnline {
   font-weight: 100;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .whatsappTextBoxLower {
@@ -142,11 +142,10 @@
 
 @media (max-width: 700px) {
   .whatsappTextBox {
-    --height: 250px;
-    width: 300px;
-    height: var(--height);
-    top: -270px;
-    left: 20px;
-    border-radius: 20px;
+    width: 280px;
+    height: 260px;
+    top: -280px;
+    left: 10px;
+    border-radius: 8px;
   }
 }
