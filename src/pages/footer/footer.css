@@ -10,27 +10,26 @@
   text-align: left;
 }
 
-.footerAbout {
+.footerAbout,
+.footerNav,
+.footerContact {
   flex: 1;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 .footerAbout h3,
-.footerNav h3 {
+.footerNav h3,
+.footerContact h3 {
   font-size: 20px;
   margin-bottom: 10px;
   color: #f0a500;
 }
 
-.footerAbout p {
+.footerAbout p,
+.footerContact p {
   font-size: 14px;
   line-height: 1.6;
   color: #dcdcdc;
-}
-
-.footerNav {
-  flex: 1;
-  max-width: 200px;
 }
 
 .footerNav ul {
@@ -50,6 +49,21 @@
 }
 
 .footerNav a:hover {
+  color: #f0a500;
+}
+
+/* Contact Details */
+.footerContact p {
+  margin: 5px 0;
+}
+
+.footerContact a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerContact a:hover {
   color: #f0a500;
 }
 
@@ -80,7 +94,8 @@
   }
 
   .footerAbout,
-  .footerNav {
+  .footerNav,
+  .footerContact {
     max-width: 100%;
     margin-bottom: 20px;
   }

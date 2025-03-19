@@ -31,6 +31,13 @@ function Footer() {
         </ul>
       </div>
 
+      {/* Contact Details */}
+      <div className="footerContact">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:info@itstravel.com">info@itstravel.com</a></p>
+        <p>Phone: <a href="tel:+4915227316839">+49 1522 7316839</a></p>
+      </div>
+
       {/* Copyright Section */}
       <div className="footerText">
         Copyright © {currentYear} It's Travel |{" "}
