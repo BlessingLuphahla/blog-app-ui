@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
 import "./footer.css";
-import { FaFacebookF, FaInstagram, FaXTwitter, FaWhatsapp } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,8 +43,8 @@ function Footer() {
             <FaInstagram />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaXTwitter />
-          </a>
+  <FaTwitter />
+</a>
           <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
             <FaWhatsapp />
           </a>
