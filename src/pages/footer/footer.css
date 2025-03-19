@@ -11,13 +11,15 @@
 }
 
 .footerAbout,
+.footerServices,
 .footerNav,
 .footerContact {
   flex: 1;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .footerAbout h3,
+.footerServices h3,
 .footerNav h3,
 .footerContact h3 {
   font-size: 20px;
@@ -32,19 +34,21 @@
   color: #dcdcdc;
 }
 
+.footerServices ul,
 .footerNav ul {
   list-style: none;
   padding: 0;
 }
 
+.footerServices li,
 .footerNav li {
   margin-bottom: 8px;
+  font-size: 16px;
 }
 
 .footerNav a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
   transition: color 0.3s ease;
 }
 
@@ -94,6 +98,7 @@
   }
 
   .footerAbout,
+  .footerServices,
   .footerNav,
   .footerContact {
     max-width: 100%;

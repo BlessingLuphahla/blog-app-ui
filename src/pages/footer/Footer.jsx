@@ -19,6 +19,17 @@ function Footer() {
         </p>
       </div>
 
+      {/* Services Section */}
+      <div className="footerServices">
+        <h3>Services</h3>
+        <ul>
+          <li>Travel Consultancy</li>
+          <li>Trip Planning</li>
+          <li>Destination Guides</li>
+          <li>Custom Itineraries</li>
+        </ul>
+      </div>
+
       {/* Navigation Links */}
       <div className="footerNav">
         <h3>Quick Links</h3>
