@@ -24,7 +24,7 @@
 .footerContact h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  color: #f0a500;
+  color: #00796b;
 }
 
 .footerAbout p,
@@ -68,7 +68,7 @@
 }
 
 .footerContact a:hover {
-  color: #00796b;
+  color: #f0a500;
 }
 
 .footerText {
