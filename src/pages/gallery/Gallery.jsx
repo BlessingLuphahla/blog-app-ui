@@ -41,7 +41,7 @@ function Gallery() {
   return (
     <div className="gallery">
       {itemData.map((item, index) => (
-        <div key={index} className="galleryImageWrapper">
+        <div key={index} className={`galleryItem size-${index % 5}`}>
           <img
             src={item.img}
             alt={`Gallery Item ${index + 1}`}
