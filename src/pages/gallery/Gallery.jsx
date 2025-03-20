@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./gallery.css";
 import { itemData } from "../../utils/galleryData";
 
@@ -15,41 +15,49 @@ function Gallery() {
     setIsModalOpen(false);
   };
 
-  const nextImage = () => {
+  const nextImage = (e) => {
+    e.stopPropagation();
     setImageIndex((prevIndex) => (prevIndex + 1) % itemData.length);
   };
 
-  const prevImage = () => {
-    setImageIndex(
-      (prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length
-    );
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setImageIndex((prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length);
   };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isModalOpen) return;
+      if (e.key === "ArrowRight") nextImage(e);
+      if (e.key === "ArrowLeft") prevImage(e);
+      if (e.key === "Escape") closeModal();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isModalOpen]);
 
   return (
     <div className="gallery">
-      {/* Gallery Images */}
       {itemData.map((item, index) => (
         <div key={index} className="galleryImageWrapper">
           <img
             src={item.img}
-            alt={`Gallery Item ${index + 1}`}  // Add alt text for accessibility
+            alt={`Gallery Item ${index + 1}`}
             className="galleryImage"
             onClick={() => openModal(index)}
+            loading="lazy"
           />
         </div>
       ))}
 
-      {/* Modal */}
       {isModalOpen && (
-        <div className="modal" onClick={closeModal}>
+        <div className="modal show" onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <img src={itemData[imageIndex].img} alt="" className="modalImage" />
-            <button className="prevBtn" onClick={prevImage}>
-              &lt;
-            </button>
-            <button className="nextBtn" onClick={nextImage}>
-              &gt;
-            </button>
+            <img src={itemData[imageIndex].img} alt="Expanded view" className="modalImage" />
+            <button className="prevBtn" onClick={prevImage}>&lt;</button>
+            <button className="nextBtn" onClick={nextImage}>&gt;</button>
           </div>
         </div>
       )}
