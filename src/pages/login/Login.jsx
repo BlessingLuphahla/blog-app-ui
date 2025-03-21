@@ -32,7 +32,7 @@ export default function Login() {
             <div className='login-container'>
                 <h1 className='login-title'>Login</h1>
                 <form className='login-form' onSubmit={handleSubmit}>
-                    <div>
+                    <div className='input-group'>
                         <label>Username</label>
                         <input
                             type='text'
@@ -41,7 +41,7 @@ export default function Login() {
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </div>
-                    <div>
+                    <div className='input-group'>
                         <label>Password</label>
                         <input
                             type='password'

@@ -1,11 +1,20 @@
 /* login.css */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
 .login {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
   min-height: 100vh;
-  background-color: #f3f4f6;
 }
 
 .login-container {
@@ -13,14 +22,14 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 90%;
   max-width: 400px;
+  text-align: center;
 }
 
 .login-title {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 600;
-  text-align: center;
   color: #333;
   margin-bottom: 1.5rem;
 }
@@ -31,20 +40,28 @@
   gap: 1rem;
 }
 
-.login-form label {
-  font-size: 0.9rem;
-  color: #555;
-  font-weight: 500;
+.input-group {
+  text-align: left;
 }
 
-.login-form input {
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-size: 1rem;
   transition: border-color 0.3s ease-in-out;
 }
 
-.login-form input:focus {
+.input-group input:focus {
   outline: none;
   border-color: #3b82f6;
   box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
@@ -59,6 +76,8 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
+  width: 100%;
+  font-weight: 500;
 }
 
 .login-button:hover {
@@ -71,8 +90,8 @@
 }
 
 .login-register {
-  text-align: center;
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .login-register a {
@@ -83,4 +102,24 @@
 
 .login-register a:hover {
   text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .login-container {
+      width: 95%;
+      padding: 1.5rem;
+  }
+
+  .login-title {
+      font-size: 1.8rem;
+  }
+
+  .input-group input {
+      font-size: 0.9rem;
+  }
+
+  .login-button {
+      font-size: 0.9rem;
+  }
 }
