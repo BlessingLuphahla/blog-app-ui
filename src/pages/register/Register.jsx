@@ -22,12 +22,9 @@ export default function Register() {
       });
 
       if (response.data) {
-        // Clear form (migth remove)
         setName("");
         setEmail("");
         setPassword("");
-
-        // Make redirection
         navigate("/login");
       }
     } catch (error) {
@@ -37,35 +34,46 @@ export default function Register() {
   };
 
   return (
-    <div className="register">
-      <h1 className="registerTitle">Register</h1>
-      <form className="registerForm" onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          type="text"
-          placeholder="Enter your username..."
-          onChange={(e) => setName(e.target.value)}
-        />
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Enter your email..."
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          placeholder="Enter your password..."
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button className="registerButton" type="submit">
-          Register
-        </button>
-      </form>
-      <button className="registerLoginButton">
-        <Link to={"/login"}>Back to Login</Link>
-      </button>
-      {error && <span className="error">Something went wrong...</span>}
+    <div className="register-wrapper">
+      <div className="register-container">
+        <h1 className="register-title">Create an Account</h1>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label>Username</label>
+            <input
+              type="text"
+              placeholder="Enter your username..."
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <label>Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password..."
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button className="register-button" type="submit">
+            Register
+          </button>
+        </form>
+        <p className="register-login-text">
+          Already have an account? <Link to="/login">Log in</Link>
+        </p>
+        {error && <span className="error-message">Something went wrong...</span>}
+      </div>
     </div>
   );
 }
