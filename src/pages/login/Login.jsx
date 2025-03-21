@@ -28,47 +28,40 @@ export default function Login() {
     };
 
     return (
-        <div className='app'>
-            <div className='login-wrapper'>
-                <div className='login'>
-                    <div className='login-container'>
-                        <h1 className='login-title'>Login</h1>
-                        <form className='login-form' onSubmit={handleSubmit}>
-                            <div className='input-group'>
-                                <label>Username</label>
-                                <input
-                                    type='text'
-                                    placeholder='Enter your username...'
-                                    value={username}
-                                    onChange={(e) => setUsername(e.target.value)}
-                                />
-                            </div>
-                            <div className='input-group'>
-                                <label>Password</label>
-                                <input
-                                    type='password'
-                                    placeholder='Enter your password...'
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                            </div>
-                            <button
-                                type='submit'
-                                disabled={isFetching}
-                                className='login-button'
-                            >
-                                Login
-                            </button>
-                        </form>
-                        <div className='login-register'>
-                            <Link to='/register'>Don't have an account? Register</Link>
-                        </div>
+        <div className='login'>
+            <div className='login-container'>
+                <h1 className='login-title'>Login</h1>
+                <form className='login-form' onSubmit={handleSubmit}>
+                    <div className='input-group'>
+                        <label>Username</label>
+                        <input
+                            type='text'
+                            placeholder='Enter your username...'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
                     </div>
+                    <div className='input-group'>
+                        <label>Password</label>
+                        <input
+                            type='password'
+                            placeholder='Enter your password...'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <button
+                        type='submit'
+                        disabled={isFetching}
+                        className='login-button'
+                    >
+                        Login
+                    </button>
+                </form>
+                <div className='login-register'>
+                    <Link to='/register'>Don't have an account? Register</Link>
                 </div>
             </div>
-            <footer className='footer'>
-                <p>&copy; 2025 Your Website. All Rights Reserved.</p>
-            </footer>
         </div>
     );
 }

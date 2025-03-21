@@ -2,20 +2,19 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f0f2f5;
-  margin: 0;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.login-wrapper {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .login-container {
@@ -105,11 +104,22 @@ body {
   text-decoration: underline;
 }
 
-/* Footer */
-.footer {
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .login-container {
+      width: 95%;
+      padding: 1.5rem;
+  }
+
+  .login-title {
+      font-size: 1.8rem;
+  }
+
+  .input-group input {
+      font-size: 0.9rem;
+  }
+
+  .login-button {
+      font-size: 0.9rem;
+  }
 }
