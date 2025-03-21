@@ -1,106 +1,101 @@
 /* register.css */
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9fafb;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
+/* General styling */
 .register {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-grow: 1;
-    padding: 2rem;
-}
-
-.register-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.register-title {
-    font-size: 2rem;
-    font-weight: 600;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f7f6;
+  }
+  
+  .registerTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 1.5rem;
-}
-
-.register-form {
+    margin-bottom: 2rem;
+  }
+  
+  .registerForm {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-}
-
-.input-group {
-    text-align: left;
-}
-
-.input-group label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-.input-group input {
     width: 100%;
-    padding: 0.75rem;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .registerForm label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .registerForm input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 1rem;
-    transition: border-color 0.3s ease-in-out;
-}
-
-.input-group input:focus {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-}
-
-.register-button {
-    background-color: #3b82f6;
-    color: white;
-    padding: 0.75rem;
+  }
+  
+  .registerForm input:focus {
+    border-color: #4c92ff;
+    box-shadow: 0 0 5px rgba(76, 146, 255, 0.5);
+  }
+  
+  .registerButton {
+    padding: 0.8rem;
+    background-color: #4c92ff;
+    color: #fff;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 100%;
-    font-weight: 500;
-}
-
-.register-button:hover {
-    background-color: #2563eb;
-}
-
-.register-login-text {
+  }
+  
+  .registerButton:hover {
+    background-color: #3577d4;
+  }
+  
+  .registerLoginButton {
     margin-top: 1rem;
-    font-size: 0.9rem;
-}
-
-.register-login-text a {
-    color: #3b82f6;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.register-login-text a:hover {
-    text-decoration: underline;
-}
-
-.error-message {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-}
+    padding: 0.8rem;
+    background-color: transparent;
+    color: #4c92ff;
+    border: 1px solid #4c92ff;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+  }
+  
+  .registerLoginButton:hover {
+    background-color: #4c92ff;
+    color: #fff;
+  }
+  
+  .error {
+    margin-top: 1rem;
+    color: #e74c3c;
+    font-size: 1rem;
+  }
+  
+  /* Ensures the footer remains unaffected */
+  footer {
+    position: relative;
+    width: 100%;
+    margin-top: auto; /* Keeps footer at the bottom */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+  
