@@ -16,6 +16,7 @@ import Error from "./components/error/Error";
 import Blog from "./pages/blog/Blog";
 import WhatsApp from "./components/whatsapp/Whatsapp";
 import Gallery from "./pages/gallery/Gallery";
+import Services from "./pages/services/services";
 import ToTop from "./components/toTop/ToTop";
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/settings" element={user ? <Settings /> : <Home />} />
 
         <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/gallery" element={<Gallery />} />
