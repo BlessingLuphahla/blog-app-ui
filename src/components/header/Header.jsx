@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import image1 from "../../images/hero-main-pic.jpg";
 import image2 from "../../images/IMG_1951-scaled.jpeg";
@@ -13,10 +14,11 @@ export default function Header() {
   return (
     <div className="header">
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Navigation, Pagination, Autoplay]}
         navigation
-        autoplay={{ delay: 3000 }}
-        loop
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop={true}
         className="headerSwiper"
       >
         <SwiperSlide>

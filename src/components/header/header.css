@@ -52,3 +52,13 @@
 .blogButton:hover {
   background: #cc5500;
 }
+
+/* Swiper navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}
+
+.swiper-pagination-bullet {
+  background: white;
+}
