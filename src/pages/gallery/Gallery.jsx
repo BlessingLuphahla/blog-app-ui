@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./gallery.css";
 import { itemData } from "../../utils/galleryData";
+import http from "../../utils/axios";
 
 function Gallery() {
   const [imageIndex, setImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [pictureData, setPictureData] = useState([]);
 
   const openModal = (index) => {
     setImageIndex(index);
@@ -22,7 +25,9 @@ function Gallery() {
 
   const prevImage = (e) => {
     e.stopPropagation();
-    setImageIndex((prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length);
+    setImageIndex(
+      (prevIndex) => (prevIndex - 1 + itemData.length) % itemData.length
+    );
   };
 
   // Keyboard navigation
@@ -38,26 +43,47 @@ function Gallery() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isModalOpen]);
 
+  useEffect(() => {
+    const getAllPics = async () => {
+      try {
+        const res = await http.get("/picture");
+        setPictureData(res.data);
+      } catch (error) {}
+    };
+
+    getAllPics();
+  }, []);
+
   return (
     <div className="gallery">
-      {itemData.map((item, index) => (
-        <div key={index} className={`galleryItem size-${index % 5}`}>
-          <img
-            src={item.img}
-            alt={`Gallery Item ${index + 1}`}
-            className="galleryImage"
-            onClick={() => openModal(index)}
-            loading="lazy"
-          />
-        </div>
-      ))}
+      {pictureData && <h2>There Are No Images In the Gallery Right Now</h2>}
+      {pictureData &&
+        pictureData.map((item, index) => (
+          <div key={index} className={`galleryItem size-${index % 5}`}>
+            <img
+              src={item.img}
+              alt={`Gallery Item ${index + 1}`}
+              className="galleryImage"
+              onClick={() => openModal(index)}
+              loading="lazy"
+            />
+          </div>
+        ))}
 
       {isModalOpen && (
         <div className="modal show" onClick={closeModal}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <img src={itemData[imageIndex].img} alt="Expanded view" className="modalImage" />
-            <button className="prevBtn" onClick={prevImage}>&lt;</button>
-            <button className="nextBtn" onClick={nextImage}>&gt;</button>
+            <img
+              src={itemData[imageIndex].img}
+              alt="Expanded view"
+              className="modalImage"
+            />
+            <button className="prevBtn" onClick={prevImage}>
+              &lt;
+            </button>
+            <button className="nextBtn" onClick={nextImage}>
+              &gt;
+            </button>
           </div>
         </div>
       )}

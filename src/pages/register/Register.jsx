@@ -22,7 +22,6 @@ export default function Register() {
       });
 
       if (response.data) {
-        // Clear form (migth remove)
         setName("");
         setEmail("");
         setPassword("");

@@ -26,6 +26,26 @@ export default function Create() {
     setValue("file", file);
   };
 
+  const handlePostImage = async (e) => {
+    e.preventDefault();
+    const image = e.target.previousElementSibling.value;
+    if (!image) return;
+
+    const data = {};
+
+    try {
+      const res = await http.post("/gallery", image);
+      data.image = res.data.url;
+
+      try {
+        await http.post("/picture", data);
+        navigate(`/gallery`);
+      } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const onSubmit = async (formData) => {
     const body = {
       title: formData.title,
@@ -132,7 +152,11 @@ export default function Create() {
       </div>
 
       <div className="createSection">
-        <h3 className="createSectionTitle">Create a Blog</h3>
+        <h3 className="createSectionTitle">Add Image To Gallery</h3>
+        <input type="file" className="galleryImageInput" />
+        <button className="postButton" onClick={handlePostImage}>
+          POST IMAGE TO GALLERY
+        </button>
       </div>
     </div>
   );
