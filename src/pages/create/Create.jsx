@@ -46,7 +46,14 @@ export default function Create() {
     }
   };
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      title: e.target[2].value,
+      description: e.target[3].value,
+    };
+
     const body = {
       title: formData.title,
       description: formData.description,
@@ -97,7 +104,7 @@ export default function Create() {
             />
           </div>
         )}
-        <form className="createForm" onSubmit={handleSubmit(onSubmit)}>
+        <form className="createForm" onSubmit={(e) => onSubmit(e)}>
           <div className="createFormGroup">
             <div className="createFormGroupOptions">
               <input
