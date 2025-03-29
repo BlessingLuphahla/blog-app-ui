@@ -54,15 +54,15 @@ function Gallery() {
     getAllPics();
   }, []);
 
-  console.log(pictureData);
-
   return (
     <div className="gallery">
       {pictureData.length === 0 && (
         <h2>There Are No Images In the Gallery Right Now</h2>
       )}
-      {pictureData.length === 0 &&
-        pictureData.map((item, index) => (
+      {pictureData.map((item, index) => {
+        console.log(item);
+
+        return (
           <div key={index} className={`galleryItem size-${index % 5}`}>
             <img
               src={item.url}
@@ -72,7 +72,8 @@ function Gallery() {
               loading="lazy"
             />
           </div>
-        ))}
+        );
+      })}
 
       {isModalOpen && (
         <div className="modal show" onClick={closeModal}>
