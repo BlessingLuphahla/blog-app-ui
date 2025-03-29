@@ -57,25 +57,27 @@ export default function Create() {
       categories: categories.split(","),
     };
 
-    if (newFile) {
-      const file = newFile;
-      const data = new FormData();
-      const filename = Date.now() + file.name;
+    const file = newFile;
+    const data = new FormData();
+    const filename = Date.now() + file.name;
 
-      data.append("name", filename);
-      data.append("file", file);
+    data.append("name", filename);
+    data.append("file", file);
 
+    try {
+      const res = await http.post("/upload", data);
+      body.image = res.data.url;
+      
       try {
-        const res = await http.post("/upload", data);
-        body.image = res.data.url;
+        const response = await http.post("/post", body);
+        console.log(response);
 
-        try {
-          const response = await http.post("/post", body);
-          navigate(`/post/${response.data._id}`);
-        } catch (error) {}
+        navigate(`/post/${response.data._id}`);
       } catch (error) {
         console.error(error);
       }
+    } catch (error) {
+      console.error(error);
     }
   };
 
