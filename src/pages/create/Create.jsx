@@ -35,7 +35,7 @@ export default function Create() {
 
     try {
       const res = await http.post("/gallery", image);
-      data.image = res.data.url;
+      data.url = res.data.url;
 
       try {
         await http.post("/picture", data);

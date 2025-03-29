@@ -4,6 +4,16 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
   padding: 20px;
+  height: max-content;
+  position: relative;
+}
+
+.gallery h2 {
+  margin: 0px;
+  color: teal;
+  width: 100%;
+  position: absolute;
+  text-align: center;
 }
 
 .galleryItem {
@@ -27,11 +37,26 @@
 }
 
 /* Different image sizes for stylish look */
-.size-0 { grid-column: span 2; grid-row: span 2; }
-.size-1 { grid-column: span 1; grid-row: span 1; }
-.size-2 { grid-column: span 2; grid-row: span 1; }
-.size-3 { grid-column: span 1; grid-row: span 2; }
-.size-4 { grid-column: span 1; grid-row: span 1; }
+.size-0 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.size-1 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.size-2 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.size-3 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.size-4 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
 
 /* Modal Styles */
 .modal {
@@ -91,8 +116,12 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.prevBtn { left: 20px; }
-.nextBtn { right: 20px; }
+.prevBtn {
+  left: 20px;
+}
+.nextBtn {
+  right: 20px;
+}
 
 .prevBtn:hover,
 .nextBtn:hover {
@@ -110,5 +139,9 @@
   .nextBtn {
     font-size: 24px;
     padding: 8px;
+  }
+
+  .gallery h2 {
+    font-size: 30px;
   }
 }
