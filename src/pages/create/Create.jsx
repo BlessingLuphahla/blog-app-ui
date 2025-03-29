@@ -48,21 +48,17 @@ export default function Create() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
-    const formData = {
-      title: e.target[2].value,
-      description: e.target[3].value,
-    };
+    const newFile = filePreview;
 
     const body = {
-      title: formData.title,
-      description: formData.description,
+      title: e.target[2].value,
+      description: e.target[3].value,
       author: user.username,
       categories: categories.split(","),
     };
 
-    if (formData.file?.size) {
-      const file = formData.file;
+    if (newFile) {
+      const file = newFile;
       const data = new FormData();
       const filename = Date.now() + file.name;
 

@@ -60,8 +60,6 @@ function Gallery() {
         <h2>There Are No Images In the Gallery Right Now</h2>
       )}
       {pictureData.map((item, index) => {
-        console.log(item);
-
         return (
           <div key={index} className={`galleryItem size-${index % 5}`}>
             <img

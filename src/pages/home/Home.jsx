@@ -13,8 +13,6 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await http.get(`/post/top`);
-      console.log(response);
-
       setPosts(response.data);
     };
     fetchPosts();
