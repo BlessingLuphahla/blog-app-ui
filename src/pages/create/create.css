@@ -115,12 +115,10 @@
   --box-shadow: 0.6px;
   font-size: 15px;
   font-weight: 500;
-  border: 1px solid teal;
-  box-shadow: var(--box-shadow) var(--box-shadow) var(--box-shadow) 0px teal;
   padding: 10px;
   width: 68vw;
   outline: none;
-  margin: 5px;
+  margin: 10px;
   border-radius: 10px;
   height: 40px;
 }

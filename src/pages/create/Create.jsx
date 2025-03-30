@@ -5,6 +5,8 @@ import { Context } from "../../context/Context";
 import http from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import image from "../../images/logo.jpg";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css'
 
 export default function Create() {
   const {
@@ -138,12 +140,12 @@ export default function Create() {
             )}
           </div>
           <div className="createFormGroup">
-            <textarea
+            <ReactQuill
               className="createInput createText"
               placeholder="Tell your story..."
               rows={10}
               {...register("description", { required: true })}
-            ></textarea>
+            ></ReactQuill>
           </div>
           <div className="createFormGroup error">
             {errors.description?.type === "required" && (
