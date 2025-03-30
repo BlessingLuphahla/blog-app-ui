@@ -20,7 +20,6 @@ export default function Post({ post }) {
         <div className="postInfo">
           <div className="postCategories">
             {post?.categories.map((category, index) => (
-              // Category should be as an object
               <span className="postCategory" key={index}>
                 {category}
               </span>
@@ -32,7 +31,10 @@ export default function Post({ post }) {
             {new Date(post.createdAt).toDateString()}
           </span>
         </div>
-        <p className="postText">{post?.description?.slice(0, 50)}...</p>
+        <p
+          className="postText"
+          dangerouslySetInnerHTML={post?.description?.slice(0, 50)}
+        ></p>
       </Link>
     </article>
   );

@@ -6,7 +6,7 @@ import http from "../../utils/axios";
 import { useNavigate } from "react-router-dom";
 import image from "../../images/logo.jpg";
 import ReactQuill from "react-quill";
-import 'react-quill/dist/quill.snow.css'
+import "react-quill/dist/quill.snow.css";
 
 export default function Create() {
   const {
@@ -20,6 +20,7 @@ export default function Create() {
   const [filePreview, setFilePreview] = useState("");
   const [isOpenFilePreview, setIsOpenFilePreview] = useState(false);
   const [categories, setCategories] = useState("");
+  const [quillText, setQuillText] = useState("");
 
   const onSelectFile = (event) => {
     const file = event.target.files[0];
@@ -48,39 +49,45 @@ export default function Create() {
     }
   };
 
+  const handleQuillText = (value) => {
+    setQuillText(value);
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const newFile = filePreview;
 
     const body = {
       title: e.target[2].value,
-      description: e.target[3].value,
+      description: quillText,
       author: user.username,
       categories: categories.split(","),
     };
 
-    const file = newFile;
-    const data = new FormData();
-    const filename = Date.now() + file.name;
+    console.log(body);
 
-    data.append("name", filename);
-    data.append("file", file);
+    // const file = newFile;
+    // const data = new FormData();
+    // const filename = Date.now() + file.name;
 
-    try {
-      const res = await http.post("/upload", data);
-      body.image = res.data.url;
-      
-      try {
-        const response = await http.post("/post", body);
-        console.log(response);
+    // data.append("name", filename);
+    // data.append("file", file);
 
-        navigate(`/post/${response.data._id}`);
-      } catch (error) {
-        console.error(error);
-      }
-    } catch (error) {
-      console.error(error);
-    }
+    // try {
+    //   const res = await http.post("/upload", data);
+    //   body.image = res.data.url;
+
+    //   try {
+    //     const response = await http.post("/post", body);
+    //     console.log(response);
+
+    //     navigate(`/post/${response.data._id}`);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    // }
   };
 
   return (
@@ -143,8 +150,9 @@ export default function Create() {
             <ReactQuill
               className="createInput createText"
               placeholder="Tell your story..."
+              value={quillText}
+              onChange={handleQuillText}
               rows={10}
-              {...register("description", { required: true })}
             ></ReactQuill>
           </div>
           <div className="createFormGroup error">
