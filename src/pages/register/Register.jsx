@@ -15,11 +15,13 @@ export default function Register() {
     setError(false);
 
     try {
-      const response = await http.post("/auth/register", {
+      const data = {
         username: name,
         email,
         password,
-      });
+      };
+
+      const response = await http.post("/auth/register", data);
 
       if (response.data) {
         setName("");
