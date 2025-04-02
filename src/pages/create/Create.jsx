@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import image from "../../images/logo.jpg";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import Loading from "../../components/loading/Loading";
 
 export default function Create() {
   const {
@@ -21,6 +22,8 @@ export default function Create() {
   const [isOpenFilePreview, setIsOpenFilePreview] = useState(false);
   const [categories, setCategories] = useState("");
   const [quillText, setQuillText] = useState("");
+  const [publishLoading, setPublishLoading] = useState(false);
+  const [imageUploadLoading, setImageUploadLoading] = useState(false);
 
   const onSelectFile = (event) => {
     const file = event.target.files[0];
@@ -31,7 +34,8 @@ export default function Create() {
 
   const handlePostImage = async (e) => {
     e.preventDefault();
-    const image = e.target.previousElementSibling.files[0];
+    var imageFile = e.target.previousElementSibling;
+    const image = imageFile.files[0];
 
     if (!image) return;
 
@@ -44,15 +48,23 @@ export default function Create() {
     const data = {};
 
     try {
+      setImageUploadLoading(true);
       const res = await http.post("/gallery", ImageData);
       data.url = res.data.url;
+      setImageUploadLoading(false);
 
       try {
+        setImageUploadLoading(true);
         await http.post("/picture", data);
+        setImageUploadLoading(false);
+        imageFile.value = null;
         navigate(`/gallery`);
-      } catch (error) {}
+      } catch (error) {
+        setImageUploadLoading(false);
+      }
     } catch (error) {
       console.error(error);
+      setImageUploadLoading(false);
     }
   };
 
@@ -79,19 +91,24 @@ export default function Create() {
     data.append("file", file);
 
     try {
+      setPublishLoading(true);
       const res = await http.post("/upload", data);
       body.image = res.data.url;
+      setPublishLoading(false);
 
       try {
+        setPublishLoading(true);
         const response = await http.post("/post", body);
-        console.log(response);
+        setPublishLoading(false);
 
         navigate(`/post/${response.data._id}`);
       } catch (error) {
         console.error(error);
+        setPublishLoading(false);
       }
     } catch (error) {
       console.error(error);
+      setPublishLoading(false);
     }
   };
 
@@ -127,7 +144,7 @@ export default function Create() {
               />
               <input
                 type="text"
-                placeholder="Enter categories (should be comma seperated)"
+                placeholder="Enter categories (should be comma separated)"
                 className="createInput category"
                 autoFocus={true}
                 {...register("category", { required: true, minLength: 5 })}
@@ -166,7 +183,7 @@ export default function Create() {
             )}
           </div>
           <button className="createSubmit" type="submit">
-            Publish
+            {publishLoading ? <Loading /> : "Publish"}
           </button>
         </form>
       </div>
@@ -175,7 +192,7 @@ export default function Create() {
         <h3 className="createSectionTitle">Add Image To Gallery</h3>
         <input type="file" className="galleryImageInput" />
         <button className="postButton" onClick={(e) => handlePostImage(e)}>
-          POST IMAGE TO GALLERY
+          {imageUploadLoading ? <Loading /> : "POST IMAGE TO GALLERY"}
         </button>
       </div>
     </div>
