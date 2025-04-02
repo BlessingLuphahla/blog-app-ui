@@ -19,6 +19,7 @@ export default function Create() {
   const { user } = useContext(Context);
   const navigate = useNavigate();
   const [filePreview, setFilePreview] = useState("");
+  // const [filePreview, setFilePreview] = useState("");
   const [isOpenFilePreview, setIsOpenFilePreview] = useState(false);
   const [categories, setCategories] = useState("");
   const [quillText, setQuillText] = useState("");
@@ -191,6 +192,21 @@ export default function Create() {
       <div className="createSection">
         <h3 className="createSectionTitle">Add Image To Gallery</h3>
         <input type="file" className="galleryImageInput" />
+        {filePreview && isOpenFilePreview && (
+          <div className="previewContainer">
+            <div
+              className="previewContainerClose"
+              onClick={() => setIsOpenFilePreview(false)}
+            >
+              ×
+            </div>
+            <img
+              className="createImage"
+              src={URL.createObjectURL(filePreview)}
+              alt="ss"
+            />
+          </div>
+        )}
         <button className="postButton" onClick={(e) => handlePostImage(e)}>
           {imageUploadLoading ? <Loading /> : "POST IMAGE TO GALLERY"}
         </button>
