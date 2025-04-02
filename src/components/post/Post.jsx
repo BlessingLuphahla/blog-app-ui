@@ -33,7 +33,7 @@ export default function Post({ post }) {
         </div>
         <p
           className="postText"
-          dangerouslySetInnerHTML={post?.description?.slice(0, 50)}
+          dangerouslySetInnerHTML={{ __html: post?.description?.slice(0, 50) }}
         ></p>
       </Link>
     </article>
