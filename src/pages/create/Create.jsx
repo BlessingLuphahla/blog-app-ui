@@ -31,13 +31,20 @@ export default function Create() {
 
   const handlePostImage = async (e) => {
     e.preventDefault();
-    const image = e.target.previousElementSibling.value;
+    const image = e.target.previousElementSibling.files[0];
+
     if (!image) return;
+
+    const ImageData = new FormData();
+    const filename = Date.now() + image.name;
+
+    ImageData.append("name", filename);
+    ImageData.append("file", image);
 
     const data = {};
 
     try {
-      const res = await http.post("/gallery", image);
+      const res = await http.post("/gallery", ImageData);
       data.url = res.data.url;
 
       try {
@@ -64,30 +71,28 @@ export default function Create() {
       categories: categories.split(","),
     };
 
-    console.log(body);
+    const file = newFile;
+    const data = new FormData();
+    const filename = Date.now() + file.name;
 
-    // const file = newFile;
-    // const data = new FormData();
-    // const filename = Date.now() + file.name;
+    data.append("name", filename);
+    data.append("file", file);
 
-    // data.append("name", filename);
-    // data.append("file", file);
+    try {
+      const res = await http.post("/upload", data);
+      body.image = res.data.url;
 
-    // try {
-    //   const res = await http.post("/upload", data);
-    //   body.image = res.data.url;
+      try {
+        const response = await http.post("/post", body);
+        console.log(response);
 
-    //   try {
-    //     const response = await http.post("/post", body);
-    //     console.log(response);
-
-    //     navigate(`/post/${response.data._id}`);
-    //   } catch (error) {
-    //     console.error(error);
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
+        navigate(`/post/${response.data._id}`);
+      } catch (error) {
+        console.error(error);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -169,7 +174,7 @@ export default function Create() {
       <div className="createSection">
         <h3 className="createSectionTitle">Add Image To Gallery</h3>
         <input type="file" className="galleryImageInput" />
-        <button className="postButton" onClick={handlePostImage}>
+        <button className="postButton" onClick={(e) => handlePostImage(e)}>
           POST IMAGE TO GALLERY
         </button>
       </div>
