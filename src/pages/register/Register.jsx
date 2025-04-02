@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import http from "../../utils/axios";
 import "./register.css";
+import Loading from "../../components/loading/Loading";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -21,8 +23,9 @@ export default function Register() {
         password,
       };
 
+      setLoading(true);
       const response = await http.post("/auth/register", data);
-
+      setLoading(false);
       if (response.data) {
         setName("");
         setEmail("");
@@ -60,7 +63,7 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button className="registerButton" type="submit">
-          Register
+          {loading ? <Loading /> : "Register"}
         </button>
       </form>
       <button className="registerLoginButton">
