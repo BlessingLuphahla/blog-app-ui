@@ -48,7 +48,9 @@ function Gallery() {
       try {
         const res = await http.get("/picture");
         setPictureData(res.data);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     getAllPics();
